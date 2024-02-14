@@ -40,22 +40,24 @@ After buying $500 worth of API tokens, I was able to start pulling all of these 
 
 After finding an eligible business, I would look it up on [LinkedIn Sales Navigator](https://business.linkedin.com/sales-solutions/sales-navigator) and reach out to the most senior technical leadership or founder with a message along the lines of:
 
-![Linkedin message asking for advisors](./LinkedinOutreach.png).
+![Linkedin message asking for advisors](./LinkedinOutreach.png)
 
 Sales is a funky thing for me and I imagine most technical people. It can come off as pretty ingenuine and scammy. In most cases, it usually is, so that's a fair thought. Like most things though, I think if you're a good person, working with good people, everyone benefits. To me it felt weird sending hundreds of LI connections asking for advisors, but I routinely found that when I got on a call with someone they were kind and gracious and happy to help. I'm immensely grateful to the people that have taken me up on these offers in their various forms.
 
-### `Text content does not match server-rendered HTML`
+## `Text content does not match server-rendered HTML`
 
 Like everyone's favorite React error, my thoughts and reality didn't exactly match up. Through my conversations I realized that the types of businesses that have $50k+ to spend on cybersecurity tooling are unfortunately not on Render or Supabase yet. At least not in any measurable capacity worth building a business around. I was pretty disappointed by this, I want to work with emerging companies that I find exciting and keep me engaged. But building a start up is all about this, hitting issues and finding solutions. And there's no one around to grade your homework, so you better be smart about it.
 
 Side-note: this is a common thing you'll see in my writing and exploration. I've struggled to identify when a roadblock is a disqualifying event for a valid business, and when it's a normal challenge that you simply have to overcome to continue down the same path. In this case, I was pretty sure it was a disqualifying event.
 
-### Swimming up stream
+## Swimming up stream
 
 I realized I shot pretty far downstream from AWS to Supabase, so I look at who might be in the middle. It turns out there's a pretty mature middle market for cloud providers, comprised mainly of companies like [OVHCloud](https://us.ovhcloud.com/), [Vultr](https://www.vultr.com/), and [Hetzner](https://www.hetzner.com/). Wash, rinse, and repeat. I went to host.io (finally putting that $500 to work) and started pulling customers for these providers. Immediately, I'm motivated by seeing how much larger their client base is from the previous providers.
 
-![OVH Cloud has 7 million+ domains pointing to them](./OVHCloud.png)
-
+<figure class="small">
+<img src="./OVHCloud.png" alt="OVH Cloud has 7 million+ domains pointing to them"/>
+<figcaption>7 million OVHCloud domains</figcaption>
+</figure>
 And that was another week, scraping, triaging the information, reaching out on LinkedIn, and talking with customers of those platforms. Again, I was surprised that even at this level, aside from some whales, there didn't seem to be a large client base that would be spending enterprise dollars on security. I found a lot of wordpress hosting providers, game server hosting companies, the odd tech company, but no one I met with said that security was in their budget. I'm sure the people are out there, but I couldn't find them. Even now I'm doubting myself and thinking I should go back and keep trying to find those companies, but moving fast is important and I felt this was a big enough barrier to warrant moving on.
 
 ## Thanks for the fish
