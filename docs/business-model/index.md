@@ -20,6 +20,6 @@ Bootstrapping has and still is a leading contender for how I want to run a compa
 
 I say all this to try and frame the context for a lot of my writing. You might think: "dude just get funding and give it a shot". Meh? I'll have to take a dive eventually, but jumping uneducated into a problem with other people's money is a path for someone else.
 
-This means that as I'm evaluating ideas and disqualifying potential opportunities, the type of business I'd have to build to pursue those ideas if a large part of the process. Is the idea something I'd be able to build and scale alone to a place of profitability that I could hire a second person? And some day a third? If I wanted to take growth funding, when would I need it, and what would I have to give up to do so?
+This means that as I'm evaluating ideas and disqualifying potential opportunities, the type of business I'd have to build to pursue those ideas is a large part of the process. Is the idea something I'd be able to build and scale alone to a place of profitability so I could hire a second person? And some day a third? If I wanted to take growth funding, when would I need it, and what would I have to give up to do so?
 
 This document will likely be a living document as my ideas on this change and shift, so check the commit history to watch me rewrite my own history and cover up my tracks when I eventually need to take VC funding.
