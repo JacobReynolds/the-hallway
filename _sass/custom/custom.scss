@@ -52,3 +52,7 @@ a:hover {
     font-size: 1.75rem !important;
   }
 }
+
+summary:hover {
+  text-decoration: underline;
+}

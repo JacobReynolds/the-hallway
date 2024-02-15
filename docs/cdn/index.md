@@ -6,7 +6,18 @@ nav_order: 6
 
 # 🛜 CDN
 
-Not exactly a CDN, more of a WAAP, but anytime I say WAAP people starting singing Cardi B lyrics at me. WAAP stands for Web Application and API Protection. The common example would be [Cloudflare](https://www.cloudflare.com/), but more closely would be [Imperva](https://www.imperva.com/) and [Akamai](https://www.akamai.com/). These platforms proxy all of your traffic and perform DDOS protection, bot mitigation, web firewall rule matching, API inventorying, and more. Similar in grandiose size to [a bank](../bank/), but far more in my wheelhouse. At this point I'm about 4 weeks into my start up journey and am getting a bit sick of cold outreach on LinkedIn, so I decided to grace myself with a little technical research for awhile. I knew there was a market for this, I wasn't quite sure what my differentiator would be, but I wanted to see if I could get the basic concepts built first to recharge my batteries a bit.
+Not exactly a CDN, more of a WAAP, but anytime I say WAAP people starting singing Cardi B lyrics at me. WAAP stands for Web Application and API Protection. The common example would be [Cloudflare](https://www.cloudflare.com/), but more closely would be [Imperva](https://www.imperva.com/) and [Akamai](https://www.akamai.com/). These platforms proxy all of your traffic and perform DDOS protection, bot mitigation, web firewall rule matching, API inventorying, and more. Similar in grandiose size to [a bank](../bank/), but far more in my wheelhouse. At this point I'm about 4 weeks into my start up journey and am getting a bit sick of cold outreach on LinkedIn, so I decided to grace myself with a little technical research. I knew there was a market for this, I wasn't quite sure what my differentiator would be, but I wanted to see if I could get the basic concepts built first to recharge my batteries a bit.
+
+To give you an introduction to what I built, these two diagrams can be pretty helpful and are explained below.
+
+<details>
+  <summary>Infrastructure Diagram</summary>
+  <img src="./arch.png">
+</details>
+<details>
+  <summary>WAF Request Lifecycle</summary>
+  <img src="./lifecycle.png">
+</details>
 
 ## Cheap AF
 
@@ -16,13 +27,13 @@ After some bouncing around, Digital Ocean (DO) seemed to be the best contender. 
 
 ## Can you hear me now?
 
-The next hurdle was to try and build a network of servers around the world that could communicate with each other and accept traffic. My brain immediately goes to Kubernetes (k8s). I use to manage a cluster in my last job, which thankfully we migrated off of, and am somewhat familiar with it. (Spoiler alert: he wasn't familiar enough with it). There are a lot of options for managing k8s:
+The next hurdle was to try and build a network of servers around the world that could communicate with each other and proxy traffic. My brain immediately goes to Kubernetes (k8s). I use to manage a cluster in my last job, which thankfully we migrated off of, and am somewhat familiar with it. (Spoiler alert: he wasn't familiar enough with it). There are a lot of options for managing k8s:
 
-- you can raw dog it by yourself
+- you can [raw dog it](https://kubernetes.io/docs/setup/production-environment/) by yourself
 - use a managed service like [EKS](https://aws.amazon.com/eks/) or [GKE](https://cloud.google.com/Kubernetes-engine?hl=en)
 - use some of the enterprise managers like [Rancher](https://www.rancher.com/)
 
-There are also some fun options like [k3s](https://k3s.io/) and its variants that give you a simplified method to install k8s. I took a brief look at [Nomad](https://www.nomadproject.io/) but the ecosystem sadly isn't robust enough for me to feel comfortable adopting it, but I will say they have [multi-region federation](https://developer.hashicorp.com/nomad/tutorials/manage-clusters/federation) which is more than I can say for k8s, whose federation seems to be [eternally in beta](https://groups.google.com/g/kubernetes-sig-multicluster/c/lciAVj-_ShE).
+There are also some fun options like [k3s](https://k3s.io/) and its variants that give you a simplified method to install k8s. I took a brief look at [Nomad](https://www.nomadproject.io/) but the ecosystem sadly isn't robust enough for me to feel comfortable adopting it, but they do have [multi-region federation](https://developer.hashicorp.com/nomad/tutorials/manage-clusters/federation) which is more than I can say for k8s, whose federation seems to be [eternally in beta](https://groups.google.com/g/kubernetes-sig-multicluster/c/lciAVj-_ShE).
 
 It turns out, choosing k8s despite not having multi-region federation was going to be a problem. Follow along with my stupidity that wasted 2 days. I decided not to use Digital Ocean's managed k8s because it only supports deploying the cluster in a single region (hmmm...I wonder why they do that...). So I opted to use [Rancher Kubernetes Engine 2](https://docs.rke2.io/) (RKE2) since I could control how to deploy the nodes. I spun up worker nodes in DO's New York City (NYC), Amsterdam (AMS), and Sydney (SYD) regions and deployed a simple http server into them.
 
@@ -85,10 +96,5 @@ That wasn't so hard...was it? It only took two weeks of insanity and tearing my 
 ## Uff da
 
 Yeah that was a lot. Honestly I'd open source the code, but it's mostly garbage. If you're interested in looking at it, shoot me an email at <a href="mailto:me@jakereynolds.co">me@jakereynolds.co</a>. I went on to do some user research after this and when talking with users, it seems that WAFs are mostly commoditized and no one wants to proxy their prod traffic through a network that isn't cloudflare scale. I kind of had that expectation going into this, but I think there's a lot of components from this research that I'll be able to reuse in other projects. Below you'll find some architecture diagrams that try to visualize a little bit of what I outlined above.
-
-## Architecture
-
-![Architecture diagram](./arch.png)
-![Request lifecycle diagram](./lifecycle.png)
 
 ## Thanks for reading!
