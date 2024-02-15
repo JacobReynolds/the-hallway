@@ -207,6 +207,6 @@ I also wanted to add some data feeds so I could provide IP address information, 
 
 ## Setting Sail
 
-I deployed this on AWS across ~15 regions and let it run for 3 months or so. Unfortunately work got busy and I didn't have time to invest into the project and decide to shut it off to save my cloud computing bill :/. I still think this would be an awesome project, however the people over at Greynoise are doing a killer job, so it'd be extremely tough competition.
+I deployed this on AWS across ~15 regions and let it run for 3 months or so. Unfortunately work got busy and I didn't have time to invest into the project and decided to shut it off to save my cloud computing bill :/. I still think this would be an awesome project, however the people over at Greynoise are doing a killer job, so it'd be extremely tough competition.
 
 As always, another anticlimactic ending for ya, but theia was too cool of a name not to write about.
