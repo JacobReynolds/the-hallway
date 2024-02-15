@@ -1,0 +1,23 @@
+Request Lifecycle: {
+  shape: sequence_diagram
+  User
+  Agent
+  Controller
+  Destination
+  TLS handshake: {
+    User -> Agent: TLS Client Hello
+    Agent -> Controller: acme.getCertificate
+    Controller -> Agent: Cert & Private key
+    Agent -> User: Cert
+  }
+  Proxy: {
+    User -> Agent: GET / HTTP/1.1
+    Agent -> Agent: WAF Validation
+    Agent -> Destination: Proxy
+    Destination -> Agent: Response
+    Agent -> Agent: WAF Validation
+    Agent -> User: Response
+  }
+  style.fill: transparent
+}
+style.fill: "#DADFE7"

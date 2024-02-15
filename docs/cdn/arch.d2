@@ -1,0 +1,85 @@
+# https://app.terrastruct.com/diagrams/1638793325/edit
+direction: down
+vars: {
+  d2-config: {
+    layout-engine: tala
+    theme-id: 0
+    center: true
+    sketch: true
+  }
+}
+title: Labels denoted with 🔒 are communicating over wireguard {
+  shape: text
+  near: top-center
+  style: {
+    italic: true
+    font-color: white
+  }
+}
+
+User: {
+  icon: https://icons.terrastruct.com/emotions%2F025-smile.svg
+  label: ""
+}
+
+Route53 GeoDNS
+
+User -> Route53 GeoDNS
+
+Route53 GeoDNS -> Digital Ocean.NYC.Edge Agent
+Route53 GeoDNS -> Digital Ocean.AMS.Edge Agent
+Route53 GeoDNS -> Digital Ocean.SYD.Edge Agent
+
+Digital Ocean: {
+  direction: right
+  NYC: {
+    NATS Cluster: {
+      NATS Server 1
+      NATS Server 2
+      NATS Server 1 <-> NATS Server 2: 🔒
+    }
+    Edge Agent
+
+    Edge Agent -> NATS Cluster: 🔒 NATS
+  }
+
+  AMS: {
+    NATS Cluster: {
+      NATS Server 1
+      NATS Server 2
+      NATS Server 1 <-> NATS Server 2: 🔒
+    }
+    Edge Agent
+    Edge Agent -> NATS Cluster: 🔒 NATS
+  }
+
+  SYD: {
+    NATS Cluster: {
+      NATS Server 1
+      NATS Server 2
+      NATS Server 1 <-> NATS Server 2: 🔒
+    }
+    Edge Agent
+    Edge Agent -> NATS Cluster: 🔒 NATS
+  }
+}
+
+Render: {
+  Controller
+  Web
+}
+Render.Web -> Render.Controller: HTTPS
+
+Digital Ocean.NYC.NATS Cluster -> Render.Controller: 🔒 NATS {
+  style: {
+    font-color: white
+  }
+}
+Digital Ocean.AMS.NATS Cluster -> Render.Controller: 🔒 NATS
+Digital Ocean.SYD.NATS Cluster -> Render.Controller: 🔒 NATS {
+  style: {
+    font-color: white
+  }
+}
+Digital Ocean.NYC.NATS Cluster <-> Digital Ocean.AMS.NATS Cluster: 🔒 NATS Super-cluster
+Digital Ocean.AMS.NATS Cluster <-> Digital Ocean.SYD.NATS Cluster: 🔒 NATS Super-cluster

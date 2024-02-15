@@ -9,3 +9,10 @@ aux_links:
 color_scheme: custom
 
 baseurl: /
+
+
+callouts_level: loud # or loud
+callouts:
+  note-title:
+    color: grey-lt
+    title: A note from the editor

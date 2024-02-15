@@ -32,9 +32,12 @@ So that's it then, be wiz.io for the little guys. Offer enterprise security tool
 
 ## Call me the NSA
 
-One of the things that I have going for me is I use to be a hacker (I'd argue I still am, but would never win a CTF at this point). I want to find users of Render and Supabase and ask them about their cybersecurity needs. In cybersecurity, we call this Open Source Intelligence (OSINT) and luckily for me, man is there a lot of it for this use case. For someone to use Render or Supabase they have to update their DNS records and point their domains to ones owned by the cloud provider. I could go around scraping and abusing DNS all around the world, or I could just use our friends over at [host.io](https://host.io). You can look up a domain name or (Autonomous System Number)[https://www.cloudflare.com/learning/network-layer/what-is-an-autonomous-system/] (ASN) and see all domain names that point to it.
+One of the things that I have going for me is I use to be a hacker (I'd argue I still am, but would never win a CTF at this point). I want to find users of Render and Supabase and ask them about their cybersecurity needs. In cybersecurity, we call this Open Source Intelligence (OSINT) and luckily for me, man is there a lot of it for this use case. For someone to use Render or Supabase they have to update their DNS records and point their domains to ones owned by the cloud provider. I could go around scraping and abusing DNS all around the world, or I could just use our friends over at [host.io](https://host.io). You can look up a domain name or [Autonomous System Number](https://www.cloudflare.com/learning/network-layer/what-is-an-autonomous-system/) (ASN) and see all domain names that point to it.
 
-https://github.com/JacobReynolds/writing/assets/6618908/ecbd70ae-a92c-484a-b3d8-98031062b79c
+<video width="100%" alt="Video showing a user accessing host.io" controls>
+  <source src="./RenderNameLookup.mp4" type="video/mp4">
+Your browser does not support videos.
+</video>
 
 After buying $500 worth of API tokens, I was able to start pulling all of these domain names down and prioritize who to reach out to. There were 27k domains, so how can I identify legitimate companies and not small blogging websites? In an ideal world, I'd use [zoominfo](https://zoominfo.com) but they don't really service companies of my size. Luckily for my, [Hubspot](https://hubspot.com) exists. I was able to sign up for their Starter Suite for only $240/year and get access to a pretty sweet set of tools. From there I imported all the domain names and hubspot automatically correlated the domain names to businesses, providing me their sector, revenue, employee count, and more. Unfortunately a lot of this data was pretty hit and miss, it would end up correlating small businesses on the platform to major providers. I doubt your local community center is doing $1,000,000,000 in revenue. I spent a good few days parsing through this data in a variety of ways.
 
