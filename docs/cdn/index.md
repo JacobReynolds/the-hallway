@@ -95,6 +95,6 @@ That wasn't so hard...was it? It only took two weeks of insanity and tearing my 
 
 ## Uff da
 
-Yeah that was a lot. Honestly I'd open source the code, but it's mostly garbage. If you're interested in looking at it, shoot me an email at <a href="mailto:me@jakereynolds.co">me@jakereynolds.co</a>. I went on to do some user research after this and when talking with users, it seems that WAFs are mostly commoditized and no one wants to proxy their prod traffic through a network that isn't cloudflare scale. I kind of had that expectation going into this, but I think there's a lot of components from this research that I'll be able to reuse in other projects. Below you'll find some architecture diagrams that try to visualize a little bit of what I outlined above.
+Yeah that was a lot. Honestly I'd open source the code, but it's mostly garbage. If you're interested in looking at it, shoot me an email at <a href="mailto:me@jakereynolds.co">me@jakereynolds.co</a>. I went on to do some user research after this and when talking with users, it seems that WAFs are mostly commoditized and no one wants to proxy their prod traffic through a network that isn't cloudflare scale. I kind of had that expectation going into this, but I think there's a lot of components from this research that I'll be able to reuse in other projects.
 
 ## Thanks for reading!
