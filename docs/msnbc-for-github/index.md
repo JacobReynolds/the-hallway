@@ -4,7 +4,7 @@ layout: default
 nav_order: 8
 ---
 
-# msnbc for github
+# 📰 msnbc for github
 
 I'm in love with technology. Almost pervertedly so. Not in a furry kind of way, but more of a getting married to a roller coaster kind of way. Few things in life excite me as much as technology. Finding new tools to play with, buying new hardware, writing code, solving problems, 😍. It's something I've been lucky to love in life and have the opportunity to do for a living. When thinking about start up ideas, tapping into this love is something that I commonly come back to. How can I build a platform that keeps me on the cutting edge of techology. Should I start a newsletter about emerging tech, create a youtube channel trying out all the latest frameworks, or provide training to enterprises to help them adopt new methodologies? So far nothing has stuck, but this is about one idea I pursued.
 
