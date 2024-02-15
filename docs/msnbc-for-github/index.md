@@ -24,7 +24,7 @@ There are various iterations like this out there that aggregate stargazers and c
 
 ## How does it work
 
-So Github definitely doesn't like people using their API too heavily, they famously don't have a pay-for-use API plan, and have nice but [non-suitable API limits](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28) for projects like this. That can be a future problem though, what's a small test case I can try out before we go whole hog on this? How about scraping all of the available `package.json` files from Github, so we can try and correlate dependency usage across projects. Their [Code Search API](https://docs.github.com/en/rest/search/search?apiVersion=2022-11-28#search-code) should be good for this. If we use large page sizes and take our time, rate limits shouldn't be a problem. Some Typescript along the lines of
+So Github definitely doesn't like people using their API too heavily, they famously don't have a pay-for-use API plan, and have nice but [non-suitable API limits](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28) for projects like this. That can be a future problem though, what's a small test case I can try out before we go whole hog on this? How about scraping all of the available `package.json` files from Github, so we can try and correlate dependency usage across projects. Their [Code Search API](https://docs.github.com/en/rest/search/search?apiVersion=2022-11-28#search-code) should be good for this. If we use large page sizes and take our time, rate limits shouldn't be a problem. Some Typescript along the lines of:
 
 ```typescript
 type SearchResponse<T> = {
@@ -73,7 +73,7 @@ async function codeSearchForPackageJson(page: number, pageSize: number) {
 }
 ```
 
-and you can start iterating through all `package.json` files on Github, in descending order of popularity. Deeper in the code I parse out all of the dependencies and goodness but this was the hard part. Fun fact, getting files from `raw.githubusercontent.com` doesn't count against your rate limit, which is the reason for that substitution. Since I solved that, I should go ahead and build everything else! I went through building out some dependency parsing logic, stuffing it into a DB and displaying it in a UI. Only for me to discover 2 days later this note in their docs
+and you can start iterating through all `package.json` files on Github, in descending order of popularity. Deeper in the code I parse out all of the dependencies and goodness but this was the hard part. Fun fact, getting files from `raw.githubusercontent.com` doesn't count against your rate limit, which is the reason for that substitution. Since I solved that, I should go ahead and build everything else! I went through building out some dependency parsing logic, stuffing it into a DB and displaying it in a UI. Only for me to discover, 2 days later, this note in their docs
 
 > the GitHub REST API provides up to 1,000 results for each search
 
@@ -81,11 +81,11 @@ which I didn't think would be a problem because my search showed millions of res
 
 ## Eminem? No NPM
 
-Despite my issues, I know there's a lot of large websites out there that aggregates results from Github, how do they do it? Likely enterprise agreements, but maybe there's hope. Since we're working with the javascript ecosystem right now, even though future plans include multiple languages, let's try NPM. Maybe they have a nicer API.
+Despite my issues, I know there's a lot of large websites out there that aggregate results from Github, how do they do it? Likely enterprise agreements, but maybe there's hope. Since we're working with the javascript ecosystem right now, even though future plans include multiple languages, let's try NPM. Maybe they have a nicer API.
 
 As it turns out, they are more liberal with a lot of their data, and if you look hard enough you can find their API documentation in a random [GitHub repo](https://github.com/npm/registry/blob/master/docs/REGISTRY-API.md). Even more weirdly, is a file in that repo called [`follower.md`](https://github.com/npm/registry/blob/master/docs/follower.md). This details a mechanism for creating a NPM registry follower, that will sync all data in their entire database to a remote follower that you own. Holy shit! I've been a good boy, but I don't deserve such luxury.
 
-This follower will sync NPM's CouchDB replica at [https://replicate.npmjs.com](https://replicate.npmjs.com) and stream it from the beginning of time. A lot of this went over my head, as the data it streamed contained various events across the DB, all sorts of different fields, and a lack of documentation for my small brain. It was pretty interesting to see, I was able to get a lot of the information I wanted, primarily dependencies, and even get them across versions. So I solved this for the Javascript ecosystem at least, but surprisingly life does exist outside of JS.
+This follower will sync NPM's CouchDB replica at [https://replicate.npmjs.com](https://replicate.npmjs.com) and stream it from the beginning of time. A lot of this went over my head, as the data it streamed contained various events across the DB, all sorts of different fields, and a lack of documentation for my small brain. Nevertheless, it was pretty interesting to see, I was able to get a lot of the information I wanted, primarily dependencies, and even get them across versions. So I solved this for the Javascript ecosystem at least, but surprisingly life does exist outside of JS.
 
 ## Thanks for all the fish
 
