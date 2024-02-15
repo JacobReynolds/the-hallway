@@ -10,7 +10,7 @@ nav_order: 1
 
 I often think about my sixty year-old self. What will I look back on and regret doing? Not doing? Did I sail the world? Did I really give up everything, all the momentum in my career, friendships, mortgages, and go get blasted with salt for years on end? Did I learn I get violently seasick and quit after a month? Or did I never take a big jump that I can be proud of?
 
-For the fist time, I'm confident at this moment 60 year old me is proudly looking back (time, after all, is a big ball of wibbly wobbly... time-y wimey... stuff). I quit my job! A job I had a lot of love for, with people that were incredible, that made money I was quite proud of. Why did I do it? Mostly manic anxiety about not living up to my potential, but also because I knew I needed to take that big jump in my life before it was too late. Something to hang my hat on once my knees finally gave out and my hairline ran away.
+For the first time, I'm confident at this moment 60 year old me is proudly looking back (time, after all, is a big ball of wibbly wobbly... time-y wimey... stuff). I quit my job! A job I had a lot of love for, with people that were incredible, that made money I was quite proud of. Why did I do it? Mostly manic anxiety about not living up to my potential, but also because I knew I needed to take that big jump in my life before it was too late. Something to hang my hat on once my knees finally gave out and my hairline ran away.
 
 Even more concerning to some people, I did so with no idea about what I wanted to build, no revenue, and no customers. Exciting, isn't it? I think so too.
 
