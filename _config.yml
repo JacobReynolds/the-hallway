@@ -16,3 +16,13 @@ callouts:
   note-title:
     color: grey-lt
     title: A note from the editor
+
+
+compress_html:
+  ignore:
+    envs: all
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true

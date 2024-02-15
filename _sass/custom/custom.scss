@@ -29,6 +29,10 @@ nav a {
   color: white;
 }
 
+/* Wrap some links in a span and add this class, if you want to emphasize there are multiple links in a row*/
+.link-underline a {
+  text-decoration: underline !important;
+}
 a {
   text-decoration: none !important;
 }
