@@ -3,3 +3,5 @@
   data-domain="the-hallway.jakereynolds.co"
   src="https://metrics.jakereynolds.co/js/script.js"
 ></script>
+{% assign math = page.math | default: layout.math | default: site.math %} {%
+case math %} {% when "katex" %} {% include katex.html %} {% endcase %}
