@@ -3,7 +3,6 @@ title: Derivatives
 parent: Foundation
 grand_parent: beep boop
 layout: default
-nav_order: 1
 math: katex
 ---
 
@@ -77,17 +76,3 @@ We would then end up with a derivative of
 $$
 \frac{dd}{da} = b + 2c
 $$
-
-## Chain Rule
-
-As we navigate through back propagation, we will want to identify how one node affects the loss function. But this node could be one of many.
-
-![Screenshot showing nodes](./derivatives_grad.png)
-
-In the above example, the local derivative of $$c \space w.r.t \space d$$ is 1, because it’s addition. But how does $$c$$ affect $$L$$? The [Chain Rule](https://en.wikipedia.org/wiki/Chain_rule) gives us this. And what it says is, using the above variable names
-
-$$
-\frac{dL}{dc} = \frac{dL}{dd} \cdot \frac{dd}{dc}
-$$
-
-Which in this case is $$-2 \cdot 1 = -2$$.
