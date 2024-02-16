@@ -8,6 +8,8 @@ math: katex
 
 # Derivatives
 
+This all gets a bit fuzzy for me. I never took multi-variable calculus and neural networks seem to rely on them for partial derivatives..._I think_. But the concepts outlined below should be a good summary. I still have to check [these](https://www.youtube.com/watch?v=uXt8qF2Zzfo) [out](https://www.jeremyjordan.me/neural-networks-training/) to stress test my knowledge here.
+
 ## Basics
 
 The derivative of the function $$f(x)$$ is the slope at point $$x$$, or how much the value changes at that point when increasing x by tiny amounts. In more explicit terms, it’s the value of:
