@@ -91,13 +91,13 @@ More simply, as we navigate through back propagation, we will want to identify h
 
 ![Screenshot showing nodes](./chain_rule_grad.png)
 
-Using the above example, the local derivative of $$c \space w.r.t \space d$$ is 1, because it’s addition. But how does $$c$$ affect $$L$$? The [Chain Rule](https://en.wikipedia.org/wiki/Chain_rule) gives us this. And what it says is, using the above variable names
+Using the above example, the local derivative of $$c \space w.r.t \space d$$ is 1, because it’s [addition](#addition). But how does $$c$$ affect $$L$$? The [Chain Rule](https://en.wikipedia.org/wiki/Chain_rule) gives us this. And what it says is, using the above variable names
 
 $$
 \frac{dL}{dc} = \frac{dL}{dd} \cdot \frac{dd}{dc}
 $$
 
-Which in this case is $$-2 \cdot 1 = -2$$. Why is it $$\frac{dd}{dc}=1$$? See [addition](#addition). It's even nicer because as we get further along the back propagation we only need to multiply the local derivative by the gradient of the grandparent node. Take the following:
+Which in this case is $$-2 \cdot 1 = -2$$. Why is $$\frac{dd}{dc}=1$$? See [addition](#addition). It's even nicer because as we get further along the back propagation we only need to multiply the local derivative by the gradient of the grandparent node. Take the following:
 ![Larger screenshot showing nodes](./chain_rule_ext.png)
 If we want to do $$\frac{dL}{da}$$ we would only need to do $$\frac{de}{da} \cdot \frac{dd}{de}$$, since it's all multiplication we don't have to chain it all the way back to L.
 
