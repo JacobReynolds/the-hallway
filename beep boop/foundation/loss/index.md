@@ -14,6 +14,8 @@ grand_parent: beep boop
 
 The loss is a single number that helps us understand the performance of the neural network. The loss function is how we calculate that number. A lot of the time in training a neural network is spent optimizing this loss function.
 
+It's important to understand [how the gradients of the neural network relate to the loss](../gradient-descent#how-gradients-relate-to-the-loss).
+
 ## Mean-squared error loss
 
 You calculate this by subtracting the actual output from the neural network with the expected output, squaring them, and then taking the mean of all values you tested. I _think_ this helps exaggerate values that are far from correct and shrink values that are closer to correct. But it also has the primary benefit of getting rid of the sign of the values, similar to $$abs$$.
@@ -41,6 +43,7 @@ loss = sum((yout - ygt)**2 for ygt, yout in zip(ys, ypred))
 
 # 7.817821598365237
 ```
+
 
 ## Cross-entropy loss
 
