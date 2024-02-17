@@ -72,6 +72,8 @@ $$
 
 If we increase $$p.data$$, that will lower the loss function. And just like the previous example $$-0.1 * -0.41 = 0.041$$ which will end up increasing $$p.data$$ and lowering the resulting loss function. The sign of $$p.data$$ actually has no effect here, it's only the sign of $$p.grad$$ that matters. And we manage that by basically inverting it by multiplying with $$-0.1$$. If we were instead looking to maximize the loss function, we'd multiple by $$+0.1$$.
 
+I got confused here for a bit trying to understand how we *know* that decreasing $$p.data$$ would decrease the loss function. What if the output is too low, wouldn't we want to increase the data? It's important to remember the loss function is almost like a continuation of the neural network. You take the outputs from the network and calculate the loss functions with those. So the final item in the equation is actually the output of the loss function, not the output of the neural net. That means our gradients are now directly tied to the loss function, not the outputs of the NN, due to performing back propogation starting with the loss function. 
+
 ### Zero grad
 
 You'll notice in the backwards pass above, we reset the gradient before each backwards pass. This is because after we change the weights and biases of a neuron, the gradient also changes and the previous values have no effect on it. So we reset all grads to zero so the next backwards pass can recalculate them from scratch.
