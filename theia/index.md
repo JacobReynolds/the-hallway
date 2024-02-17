@@ -7,7 +7,7 @@ nav_order: 9
 
 # 👀 theia
 
-The [Greek Goddess of Sight](https://en.wikipedia.org/wiki/Theia), or alternatively, the primordial planet that [smashed into Earth to create the Moon](<https://en.wikipedia.org/wiki/Theia_(planet)>). Theia was an idea I had to built out a sensor network of honeypots to be able to report on emerging trends in internet exploitation. You can think of it as being very similar to [Greynoise](https://www.greynoise.io/).
+The [Greek Goddess of Sight](https://en.wikipedia.org/wiki/Theia), or alternatively, the primordial planet that [smashed into Earth to create the Moon](<https://en.wikipedia.org/wiki/Theia_(planet)>). Theia was an idea I had to build out a sensor network of honeypots to be able to report on emerging trends in internet exploitation. You can think of it as being very similar to [Greynoise](https://www.greynoise.io/).
 
 ## Please help me
 
