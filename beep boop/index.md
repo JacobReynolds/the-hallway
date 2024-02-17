@@ -13,6 +13,4 @@ This is my working area for my current machine learning research. I'm starting b
 
 Random working thoughts go here.
 
-Tensors are basically scalar values from [micrograd](https://github.com/karpathy/micrograd), but put into arrays to take advantage of parallelism in computing.
-
 Loss functions help us identify the gap between what we expect from a function and what we actually got from it. The lower the loss, the more accurate the function is

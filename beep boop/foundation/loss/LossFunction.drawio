@@ -1,0 +1,22 @@
+<mxfile host="app.diagrams.net" modified="2024-02-17T16:01:54.058Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="hwVI0leB8-ZAtJqbm0MF" version="23.1.5" type="device">
+  <diagram name="Page-1" id="_gvUFp_ucttC2tlLnHjO">
+    <mxGraphModel dx="855" dy="570" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="TGnNtdPKK5nN1VZu4Hb8-1" value="$$&#xa;\frac{1}{N} \cdot \sum_{i=0}^{N} (actual_i - expected_i)^2&#xa;$$" style="text;strokeColor=none;align=center;fillColor=none;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=25;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="215" y="210" width="420" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="TGnNtdPKK5nN1VZu4Hb8-2" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Loss&lt;/font&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="460" y="230" width="20" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="TGnNtdPKK5nN1VZu4Hb8-3" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Squared&lt;/font&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="257.5" width="20" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="TGnNtdPKK5nN1VZu4Hb8-8" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Mean&lt;/font&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="425" y="230" width="20" height="415" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
