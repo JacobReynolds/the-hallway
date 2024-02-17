@@ -9,7 +9,7 @@ math: katex
 
 # Gradient Descent
 
-Gradient descent is the process fine tuning the weights and biases of a neural network to minimize our [loss function](../loss/).
+Gradient descent is the process of fine tuning the weights and biases of [neurons](../neuron) in a neural network to minimize our [loss function](../loss/).
 
 ## Example
 
