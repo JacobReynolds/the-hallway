@@ -2,6 +2,7 @@
 title: beep boop
 layout: default
 has_children: true
+description: a summary of my machine learning knowledge
 nav_order: 10
 ---
 

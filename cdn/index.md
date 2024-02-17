@@ -1,6 +1,7 @@
 ---
 title: a cdn?
 layout: default
+description: why not?
 nav_order: 6
 ---
 

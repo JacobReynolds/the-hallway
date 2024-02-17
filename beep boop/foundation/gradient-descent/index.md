@@ -2,6 +2,7 @@
 title: Gradient Descent
 parent: Foundation
 grand_parent: beep boop
+description: fine tuning a neural network
 layout: default
 math: katex
 ---

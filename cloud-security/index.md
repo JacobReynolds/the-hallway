@@ -1,6 +1,7 @@
 ---
 title: cloud security
 layout: default
+description: for when things get a little misty
 nav_order: 2
 ---
 

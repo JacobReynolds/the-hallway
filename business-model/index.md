@@ -1,6 +1,7 @@
 ---
 title: business model
 layout: default
+description: bootstrapping my way to being non-bootstrapped
 nav_order: 3
 ---
 

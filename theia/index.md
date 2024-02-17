@@ -1,6 +1,7 @@
 ---
 title: theia
 layout: default
+description: greek goddess or primordial planet?
 nav_order: 9
 ---
 

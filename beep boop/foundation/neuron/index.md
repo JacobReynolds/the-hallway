@@ -2,6 +2,7 @@
 title: Neuron
 layout: default
 parent: Foundation
+description: how neurons work in neural networks
 grand_parent: beep boop
 ---
 

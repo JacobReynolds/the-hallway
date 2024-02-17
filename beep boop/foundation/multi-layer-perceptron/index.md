@@ -2,6 +2,7 @@
 title: Multi-layer Perceptron
 layout: default
 parent: Foundation
+description: MLP? like my little pony?
 grand_parent: beep boop
 ---
 

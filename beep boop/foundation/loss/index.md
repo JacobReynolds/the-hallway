@@ -2,6 +2,7 @@
 title: Loss
 layout: default
 parent: Foundation
+description: calculations to help you tune your neural network
 grand_parent: beep boop
 ---
 

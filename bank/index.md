@@ -1,6 +1,7 @@
 ---
 title: a bank?
 layout: default
+description: building a bank? how hard could it be.
 nav_order: 5
 ---
 

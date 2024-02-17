@@ -1,6 +1,7 @@
 ---
 title: msnbc for github
 layout: default
+description: breaking news, scraping the internet is hard
 nav_order: 8
 ---
 

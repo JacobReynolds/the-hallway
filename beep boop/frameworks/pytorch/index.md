@@ -3,6 +3,7 @@ title: PyTorch
 parent: Frameworks
 layout: default
 grand_parent: beep boop
+description: like the olympic torch, but nerdier
 ---
 
 # 🥧🔥 PyTorch

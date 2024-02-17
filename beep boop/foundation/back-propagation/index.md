@@ -2,6 +2,7 @@
 title: Back Propagation
 layout: default
 parent: Foundation
+description: calculating gradients across your neural network
 grand_parent: beep boop
 ---
 
