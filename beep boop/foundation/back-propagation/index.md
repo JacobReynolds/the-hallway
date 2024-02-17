@@ -8,7 +8,7 @@ grand_parent: beep boop
 
 # Back Propagation
 
-Back propagation is the process of taking a series of [neurons](../neurons), starting at the end, and calculating the effect each neuron has on the outcome of the network. We do this by calculating the gradient (see [derivative](../derivatives/)) of each node.
+Back propagation is the process of taking a series of [neurons](../neuron), starting at the end, and calculating the effect each neuron has on the outcome of the network. We do this by calculating the gradient (see [derivative](../derivatives/)) of each node.
 
 ## Code
 
