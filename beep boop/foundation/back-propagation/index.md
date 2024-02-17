@@ -8,11 +8,11 @@ grand_parent: beep boop
 
 # Back Propagation
 
-Back propagation is the process of taking a series of nodes (equations), starting at the end, and calculating the effect each node has on the outcome of the equations. We do this by calculating the gradient ([derivative](../derivatives/)) of each node.
+Back propagation is the process of taking a series of [neurons](../neurons), starting at the end, and calculating the effect each neuron has on the outcome of the network. We do this by calculating the gradient (see [derivative](../derivatives/)) of each node.
 
 ## Code
 
-Here's an example of an individual value node that would exist inside of a chain of nodes and the functions it needs for back propagation.
+Here's an example of an individual value node that would exist inside of a chain of nodes and the functions it needs for back propagation. You can think of a value node as a simplified neuron. 
 
 ```python
 class Value:
