@@ -40,3 +40,19 @@ loss = sum((yout - ygt)**2 for ygt, yout in zip(ys, ypred))
 
 # 7.817821598365237
 ```
+
+## Cross-entropy loss
+
+TBD
+
+### Binary cross-entropy loss
+
+TBD
+
+## Max-margin loss
+
+TBD
+
+## Regularization
+
+Not really familiar with this concept yet. But info is available [here](https://developers.google.com/machine-learning/crash-course/regularization-for-simplicity/l2-regularization).

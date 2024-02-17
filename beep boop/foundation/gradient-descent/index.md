@@ -70,4 +70,18 @@ p.grad = -0.41\newline
 p.data = -0.88
 $$
 
-If we increase $$p.data$$, that will lower the loss function. And just like the previous example $$-0.1 * -0.41 = 0.041$$ which will end up increasing $$p.data$$ and lowering the resulting loss function. The sign of $$p.data$$ actually has no effect here, it's only the sign of $$p.grad$$ that matters. And we manage that by basically inverting it by multiplying with $$-0.1$$. If we were instead looking to maximize the loss function, we'd multiple by $$+0.1$$
+If we increase $$p.data$$, that will lower the loss function. And just like the previous example $$-0.1 * -0.41 = 0.041$$ which will end up increasing $$p.data$$ and lowering the resulting loss function. The sign of $$p.data$$ actually has no effect here, it's only the sign of $$p.grad$$ that matters. And we manage that by basically inverting it by multiplying with $$-0.1$$. If we were instead looking to maximize the loss function, we'd multiple by $$+0.1$$.
+
+### Zero grad
+
+You'll notice in the backwards pass above, we reset the gradient before each backwards pass. This is because after we change the weights and biases of a neuron, the gradient also changes and the previous values have no effect on it. So we reset all grads to zero so the next backwards pass can recalculate them from scratch.
+
+## Choosing a learning rate
+
+When figuring out the learning rate to multiply your gradient by, it's important not to have too large of a value as you could overstep the optimal point. But also too small of a value can cause learning to take forever.
+
+As the number of iterations increases, it's common to use a strategy called "Learning Rate Decay" that lowers the learning rate as you get further into your training.
+
+## At scale
+
+When performing gradient descent at scale, it's common to only analyze a small subset of the total neurons to save on computation time. This means you'll choose a batch of neurons/layers, perform a forward pass on them, calculate the [loss function](../loss) on that batch, and update gradients within that batch accordingly.
