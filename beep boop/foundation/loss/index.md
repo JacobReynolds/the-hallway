@@ -20,7 +20,7 @@ It's important to understand [how the gradients of the neural network relate to 
 
 You calculate this by subtracting the actual output of the neural network from the expected output, squaring them, and then taking the mean of all values you tested. I _think_ this helps exaggerate values that are far from correct and shrink values that are closer to correct. But it also has the primary benefit of getting rid of the sign of the values, similar to $$abs$$.
 
-The curious thing to me is that we don't actually take the mean of the summated squared losses, at least not in anything I've seen so far. So I'm hoping to figure that out. It seems like the division by $$N$$ doesn't really matter, it's the squaring of the loss values that actually give us our metrics. Everything else is just syntactic sugar.
+The curious thing to me is that we don't actually take the mean of the summated squared losses, at least not in anything I've seen so far. So I'm hoping to figure that out. It seems like the division by $$N$$ doesn't really matter, it's the squaring of the loss values that actually give us our metrics. Everything else is just syntactic sugar. This is a popular method when performing regression.
 
 ![Mathematical expression of mean squared loss](./mean-squared-loss.png)
 
@@ -58,4 +58,16 @@ TBD
 
 ## Regularization
 
-Not really familiar with this concept yet. But info is available [here](https://developers.google.com/machine-learning/crash-course/regularization-for-simplicity/l2-regularization).
+Not really familiar with this concept yet. But info is available [here](https://developers.google.com/machine-learning/crash-course/regularization-for-simplicity/l2-regularization). It seems to be a way to try and smooth out irregularities in your model. One example is taking all of your neurons squaring them, taking the mean, and then multiplying that value by a small number like .01. You then add that to your loss function and it helps the loss function force your weights to be zero. More on that [here](https://youtu.be/PaCmpygFfXo?si=oNApqfob8J9w3hhG&t=6817).
+
+## Log likelihood
+
+When looking at probabilities, we will commonly see they're between 0 and 1, which makes it hard to work with them since multiplying them creates increasingly smaller numbers. To counter this, we use the log likelihood by taking the log of the probability. Giving us a wider range of numbers.
+
+### Negative log likelihood
+
+This is the exact same except we invert the values. This is so that we can use it as a loss function and commonly with loss functions we optimize to get them as low as possible. But for a normal log likelihood the extremely negative values mean it's less likely. Inverting fixes that. It's also common to average the negative log likelihood, to give us a better estimation across the data set. This is a popular method when performing classification.
+
+## Maximum Likelihood Estimation
+
+This is when you train a model based purely on the statistical information you have access to, optimizing for likelihood of the various parameters.
