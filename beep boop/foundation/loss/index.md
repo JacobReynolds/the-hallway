@@ -44,7 +44,6 @@ loss = sum((yout - ygt)**2 for ygt, yout in zip(ys, ypred))
 # 7.817821598365237
 ```
 
-
 ## Cross-entropy loss
 
 TBD

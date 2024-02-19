@@ -74,7 +74,9 @@ If we increase $$p.data$$, that will lower the loss function. And just like the 
 
 ### How gradients relate to the loss
 
-I got confused here for a bit trying to understand how we *know* that decreasing $$p.data$$ would decrease the loss function. What if the output is too low, wouldn't we want to increase the data? It's important to remember the loss function is almost like a continuation of the neural network. You take the outputs from the network and calculate the loss functions with those. So the final item in the equation is actually the output of the loss function, not the output of the neural net. That means our gradients are now directly tied to the loss function, not the outputs of the NN, due to performing back propogation starting with the loss function. 
+I got confused here for a bit trying to understand how we _know_ that decreasing $$p.data$$ would decrease the loss function. What if the output is too low, wouldn't we want to increase the data? It's important to remember the loss function is almost like a continuation of the neural network. You take the outputs from the network and calculate the loss functions with those. So the final item in the equation is actually the output of the loss function, not the output of the neural net. That means our gradients are now directly tied to the loss function, not the outputs of the NN, due to performing back propagation starting with the loss function.
+
+This then confused me more, because if we have 4 forward passes of the NN resulting in a single loss, wouldn't back propagation update the weights/grads of the 4 individual forward passes, not the weights of the underlying model? While it may update the grad/weights for a lot of the intermediary calculations, all 4 of the forward passes used the exact same base neurons in their passes. So as we back propagate we sum the grads for each pass. However this does result in different weights of the neurons than if we ran 4 passes and back propagated individually. I'm still unclear on the tradeoffs here.
 
 ### Zero grad
 
