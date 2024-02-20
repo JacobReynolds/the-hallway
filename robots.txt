@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://the-hallway.jakereynolds.co/sitemap.xml.gz

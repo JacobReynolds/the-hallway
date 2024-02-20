@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <script defer data-domain="the-hallway.jakereynolds.co" src="https://metrics.jakereynolds.co/js/script.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761787093299">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.5.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Character Levelthe-hallway</title>
+    <meta name="title" content="Character Levelthe-hallway">
+    <meta name="description" content="character level language models">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://the-hallway.jakereynolds.co/beep-boop/foundation/model-types/character-level/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://the-hallway.jakereynolds.co/beep-boop/foundation/model-types/character-level/">
+    <meta property="og:title" content="Character Levelthe-hallway">
+    <meta property="og:description" content="character level language models">
+    <meta property="og:image" content="https://the-hallway.jakereynolds.co/beep-boop/foundation/model-types/character-level/bigram.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://the-hallway.jakereynolds.co/beep-boop/foundation/model-types/character-level/">
+    <meta property="twitter:title" content="Character Levelthe-hallway">
+    <meta property="twitter:description" content="character level language models">
+    <meta property="twitter:image" content="https://the-hallway.jakereynolds.co/beep-boop/foundation/model-types/character-level/bigram.png">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../../../resources/css/retype.css?v=3.5.0.761787093299" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.5.0.761787093299" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.5.0.761787093299" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.5.0.761787093299" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../../../" class="flex items-center leading-snug text-2xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">the-hallway</span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/jacobreynolds/the-hallway">Github</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/jacobreynolds/the-hallway">Github</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="character-level-language-models" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#character-level-language-models">#</doc-anchor-trigger>
+        <span>Character-level Language Models</span>
+    </h1>
+</doc-anchor-target>
+<p>These models are able to predict the next character given a sequence of 1 or more previous characters. These are as opposed to <a href="../word-level/">word-level language models</a>.</p>
+<doc-anchor-target id="bi-gram">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#bi-gram">#</doc-anchor-trigger>
+        <span>Bi-gram</span>
+    </h2>
+</doc-anchor-target>
+<p>Predicts the next character in the sequence exclusively based on the current character. We do this by taking all of the character pairs in every word in the data set and calculating how often the first character is succeeded by the second character. We can store this in a 2d array with the rows being the first character and the columns being the second. We&#x27;ll also add an extra row for the <a href="../#start-and-stop-tokens">start and stop token</a>.</p>
+<p>A nice code-based representation of this is as follows:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import torch
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+words = open('names.txt', 'r').read().splitlines()
+TOKEN='.'
+
+bigram = torch.zeros(27,27, dtype=torch.int32)
+
+chars = list(set(''.join(words)+TOKEN))
+chars.sort()
+stoi = dict([(ch, i) for i, ch in enumerate(chars)])
+itos = dict([(i, ch) for ch, i in stoi.items()])
+for word in words:
+    word = TOKEN+word+TOKEN
+    for ch1, ch2 in zip(word, word[1:]):
+        bigram[stoi.get(ch1), stoi.get(ch2)]+=1
+
+plt.figure(figsize=(16,16))
+plt.imshow(bigram, cmap='Blues')
+for i in range(27):
+    for j in range(27):
+        chstr = itos[i] + itos[j]
+        plt.text(j, i, chstr, ha=&quot;center&quot;, va=&quot;bottom&quot;, color='gray')
+        plt.text(j, i, bigram[i, j].item(), ha=&quot;center&quot;, va=&quot;top&quot;, color='gray')
+plt.axis('off')
+
+g = torch.Generator().manual_seed(2147483647)
+prob = (bigram+1).float() # +1 is smoothing the model, so there are no zeros that would result in an infinite negative log loss probability
+prob /= prob.sum(1, keepdim=True)
+
+for _ in range(10):
+    char = 0
+    out=''
+    while True:
+        char = torch.multinomial(prob[char], num_samples=1, replacement=True, generator=g).item()
+        out += itos[char]
+        if char == 0:
+            break
+    print(out)
+
+# cexze.
+# momasurailezitynn.
+# konimittain.
+# llayn.
+# ka.
+# da.
+# staiyaubrtthrigotai.
+# moliellavo.
+# ke.
+# teda.</code></pre>
+</doc-codeblock></div>
+<p><figure class="content-center">
+    <img src="bigram.png" alt="Bigram screenshot">
+    <figcaption class="caption">Bigram screenshot</figcaption>
+</figure>
+</p>
+<p>We generate statistics for each character pairing, then sample from those statistics to create terrible names.</p>
+<doc-anchor-target id="weights-and-biases">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#weights-and-biases">#</doc-anchor-trigger>
+        <span>Weights and biases</span>
+    </h3>
+</doc-anchor-target>
+<p>Since this isn&#x27;t a neural network, there aren&#x27;t weights and biases. However, there are still parameters. In this case, the likelihood of each character pairing is considered a parameter.</p>
+<doc-anchor-target id="bi-gram-converted-to-a-single-layer-neural-network">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#bi-gram-converted-to-a-single-layer-neural-network">#</doc-anchor-trigger>
+        <span>Bi-gram converted to a single-layer neural network</span>
+    </h2>
+</doc-anchor-target>
+<p>If we take the bi-gram example we can easily expand off of it to create a neural network with one layer of inputs and one layer of outputs and get roughly the same result.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import torch
+words = open('names.txt', 'r').read().splitlines()
+TOKEN='.'
+chars = list(set(''.join(words)+TOKEN))
+chars.sort()
+stoi = dict([(ch, i) for i, ch in enumerate(chars)])
+itos = dict([(i, ch) for ch, i in stoi.items()])
+xs, ys = [], []
+g = torch.Generator().manual_seed(2147483648)
+
+for w in words:
+  chs = [TOKEN] + list(w) + [TOKEN]
+  for ch1, ch2 in zip(chs, chs[1:]):
+    ix1 = stoi[ch1]
+    ix2 = stoi[ch2]
+    xs.append(ix1)
+    ys.append(ix2)
+
+xs = torch.tensor(xs)
+ys = torch.tensor(ys)
+W = torch.randn((27,27), generator=g, requires_grad=True)
+
+xenc = torch.nn.functional.one_hot(xs, 27).float()
+
+
+for _ in range(200):
+  logits = xenc @ W
+  counts = torch.exp(logits)
+  probs = counts / counts.sum(1, keepdim=True)
+  loss = (-probs[torch.arange(xs.nelement()), ys].log().mean())
+  print(loss)
+  W.grad = None
+  loss.backward()
+  W.data += -50 * W.grad</code></pre>
+</doc-codeblock></div>
+<p>And then we can sample from this simple neural network with the following</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">for _ in range(10):
+  out = []
+  ix = 0
+  while True:
+    xenc = torch.nn.functional.one_hot(torch.tensor([ix]), 27).float()
+    logits = xenc @ W
+    counts = logits.exp()
+    p = counts / counts.sum(1, keepdims=True)
+
+    ix = torch.multinomial(p, num_samples=1, replacement=True, generator=g).item()
+    out.append(itos[ix])
+    if ix == 0:
+      break
+  print(''.join(out))</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="xenc--w">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#xenc--w">#</doc-anchor-trigger>
+        <span><code v-pre>xenc @ W</code>?!</span>
+    </h3>
+</doc-anchor-target>
+<p>It took me awhile to get my head around exactly what was happening when you do <code v-pre>logits = xenc @ W</code>. When we did this with the bigram earlier, we could just get the probabilities for each input by calling <code v-pre>prob[char]</code>. We can actually do that as well here if we really felt like it with <code v-pre>logits = W[ix][None, :]</code>, however as the math gets more complicated it&#x27;s easier to stick to the matrix multiplication abstraction of that, which is <code v-pre>xenc @ W</code>. The <code v-pre>[None, :]</code> part takes care of converting the 27-length tensor to a <code v-pre>1x27</code> tensor.</p>
+<doc-anchor-target id="tri-gram-quad-gram-multi-layer-perceptron">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tri-gram-quad-gram-multi-layer-perceptron">#</doc-anchor-trigger>
+        <span>Tri-gram (quad-gram?) multi-layer perceptron</span>
+    </h2>
+</doc-anchor-target>
+<p>The hardest thing for me to grasp in this is the embedding space. In the following code, you&#x27;ll see we have a hyper parameter called <code v-pre>EMBEDDING_SPACE</code> which is 2. This means that for every character <code v-pre>a-z.</code> in our input, that character lives in 2d space and can be plotted with an x,y axis. When visualizing this, the groupings of these characters represent how closely the neural network thinks they&#x27;re related.</p>
+<p><figure class="content-center">
+    <img src="embeddings.png" alt="2d visualization of the embeddings">
+    <figcaption class="caption">2d visualization of the embeddings</figcaption>
+</figure>
+</p>
+<p>When we increase the embedding space, we&#x27;re essentially giving the neural network more dimensions to tune to gauge similarity between the input characters. So it can relate them amongst a variety of commonalities.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import torch
+import torch.nn.functional as F
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+words = open('names.txt', 'r').read().splitlines()
+g = torch.Generator().manual_seed(1)
+
+[training_set, validation_set, test_set] = torch.utils.data.random_split(words, [.8 ,.1 ,.1], generator=g)
+
+TOKEN='.'
+CONTEXT_LENGTH=3
+chars = list(set(''.join(words)+TOKEN))
+chars.sort()
+itos = dict([(i,s) for i, s in enumerate(chars)])
+stoi = dict([s, i] for i, s in enumerate(chars))
+
+
+def build_dataset(words):
+    xs = []
+    ys = []
+    for word in words:
+        context = [0]*CONTEXT_LENGTH
+        for i, ch in enumerate(word+TOKEN):
+            ix = stoi[ch]
+            xs.append(context)
+            ys.append(ix)
+
+            # print(f&quot;{''.join(itos[i] for i in context)} -&gt; &quot; + ch)
+            context = context[1:]+[ix]
+    return xs, ys
+
+xs, ys = build_dataset(training_set)
+xsVal, ysVal = build_dataset(validation_set)
+xsTest, ysTest = build_dataset(test_set)
+
+LAYER_NEURONS = 300
+CHARACTERS = len(chars)
+EMBEDDING_SPACE = 2
+NUM_INPUTS = len(xs)
+X = torch.tensor(xs)
+Y = torch.tensor(ys)
+X_VAL = torch.tensor(xsVal)
+Y_VAL = torch.tensor(ysVal)
+C = torch.randn((CHARACTERS, EMBEDDING_SPACE), generator=g)
+INPUT_DIMENSIONS = CONTEXT_LENGTH * EMBEDDING_SPACE
+
+W1 = torch.randn((INPUT_DIMENSIONS, LAYER_NEURONS), generator=g)
+b1 = torch.randn(LAYER_NEURONS, generator=g)
+W2 = torch.randn((LAYER_NEURONS, CHARACTERS), generator=g)
+b2 = torch.randn(CHARACTERS, generator=g)
+parameters = [W1, b1, W2, b2, C]
+num_params = sum([p.nelement() for p in parameters])
+
+print(f&quot;{num_params=}&quot;)
+for p in parameters:
+    p.requires_grad = True
+
+stepsi = []
+lossi = []
+BATCH_SIZE=32
+for i in range(1000):
+    ix = torch.randint(0, X.shape[0], (BATCH_SIZE,))
+
+    # Forward pass
+    emb = C[X[ix]] # No calculation is happening here, we're simply fetching the embeddings for each input
+    h = torch.tanh(emb.view(-1, INPUT_DIMENSIONS) @ W1 + b1) # `.view` here transforms the NUM_INPUTS x CONTEXT_LENGTH x EMBEDDING_SPACE tensor into a NUM_INPUTS x (CONTEXT_LENGTH * EMBEDDING_SPACE) tensor so we can properly perform the dot product
+    logits = h @ W2 + b2
+    loss = F.cross_entropy(logits, torch.tensor(ys)[ix])
+
+    # Backward pass
+    for p in parameters:
+        p.grad = None
+
+    loss.backward()
+    lr = .1
+    for p in parameters:
+        p.data += -lr * p.grad
+
+    stepsi.append(i)
+    lossi.append(loss.item())
+
+# Calculate loss with our validation set
+plt.plot(stepsi, lossi)
+emb = C[X_VAL]
+h = torch.tanh(emb.view(-1, INPUT_DIMENSIONS) @ W1 + b1)
+logits = h @ W2 + b2
+val_loss = F.cross_entropy(logits, Y_VAL)
+print(f&quot;train_loss={loss.item()}&quot;)
+print(f&quot;val_loss={val_loss.item()}&quot;)
+
+# Sample from the model
+for _ in range(10):
+    out = []
+    context = [0] * CONTEXT_LENGTH
+    while True:
+        emb = C[torch.tensor([context])]
+        h = torch.tanh(emb.view(1, -1) @ W1 + b1)
+        logits = h @ W2 + b2
+        probs = torch.softmax(logits,1)
+        ix = torch.multinomial(probs, num_samples=1, replacement=True, generator=g).item()
+        context = context[1:]+[ix]
+        if ix == 0:
+            break
+        out.append(itos[ix])
+    print(''.join(out))</code></pre>
+</doc-codeblock></div>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../../beep-boop/foundation/model-types/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Model Types</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../../beep-boop/foundation/model-types/word-level/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Word Level</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Character Level", level: 4, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
