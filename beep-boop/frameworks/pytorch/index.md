@@ -135,3 +135,111 @@ F.one_hot(val, num_classes=26)
 #         [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 #         [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]])
 ```
+
+## Indexing tensors
+
+When trying to get indices out of a tensor you can actually provide a list to the array accessor to get multiple items returned.
+
+```python
+C = torch.randn((27, 2))
+C[5]
+# tensor([-0.7773, -0.2515])
+
+C[[1,2,3]]
+# tensor([[-0.6540, -1.6095],
+#         [-0.1002, -0.6092],
+#         [-0.9798, -1.6091]])
+```
+
+You can also access multiple dimensions within a singular accessor
+
+```python
+C = torch.randn((27, 2))
+C[5][1]
+# tensor(-0.2515)
+
+C[5,1]
+# tensor(-0.2515)
+```
+
+## Unbind
+
+There may be times where you want to take certain dimensions out of a tensor, you can do that using [unbind](https://pytorch.org/docs/stable/generated/torch.unbind.html)
+
+```python
+tens = torch.tensor([[1,2,3],[4,5,6],[7,8,9]])
+print(tens)
+print(torch.unbind(tens, 0))
+# tensor([[1, 2, 3],
+#         [4, 5, 6],
+#         [7, 8, 9]])
+# (tensor([1, 2, 3]), tensor([4, 5, 6]), tensor([7, 8, 9]))
+
+
+print(torch.unbind(tens, 1))
+# (tensor([1, 4, 7]), tensor([2, 5, 8]), tensor([3, 6, 9]))
+```
+
+What unbind does it takes in an arbitrary tensor and returns all values from it for the particular dimension you provide. In the above example you can see when we pass in dimension `1` it returns the tensor with all column values joined together.
+
+## Cat
+
+`torch.cat` will concatenate tensors, it's purely a transformational operation, there isn't any multiplication/summation/etc... happening.
+
+```python
+torch.cat(
+    (
+        torch.tensor([
+            [1],
+            [2]
+        ]),
+        torch.tensor([
+            [3],
+            [4]
+        ])
+    )
+)
+
+# tensor([[1],
+#         [2],
+#         [3],
+#         [4]])
+```
+
+## View
+
+Instead of needing [unbind](#unbind) and [cat](#cat), you can use the `view` function to transform the dimensions of a tensor.
+
+```python
+t = torch.arange(10)
+print(t)
+# tensor([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+t.view(2,5)
+# tensor([[0, 1, 2, 3, 4],
+#         [5, 6, 7, 8, 9]])
+```
+
+And this is extremely performant because the way PyTorch stores tensors `t.storage()` is as a single vector, so it only requires transformation at the runtime, not in the storage.
+
+## Cross-entropy
+
+When calculating the negative log loss likelihood we commonly do something like:
+
+```python
+ys = ...
+logits = h @ W2 + b2
+counts = logits.exp()
+probs = counts / counts.sum(1, keepdims=True)
+loss = (-probs[torch.arange(emb.shape[0]), ys].log().mean())
+# tensor(12.4636)
+```
+
+PyTorch has this built-in with a simple [`cross_entropy`](https://pytorch.org/docs/stable/generated/torch.nn.functional.cross_entropy.html) function:
+
+```python
+torch.nn.functional.cross_entropy(logits, torch.tensor(ys))
+# tensor(12.4636)
+```
+
+This function also handles edge cases far better. Because there is a limited range of numbers that computers can represent, if our logits contained `100`, running `.exp()` on that results in `inf`. And adding `inf` to any math really fucks things up. The `cross_entropy` function handles this by subtracting the logits by the largest number in them. Now the max value is 0, but the distributions are all still equal so the probabilities aren't changed at all.

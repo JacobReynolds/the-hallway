@@ -44,10 +44,6 @@ loss = sum((yout - ygt)**2 for ygt, yout in zip(ys, ypred))
 # 7.817821598365237
 ```
 
-## Cross-entropy loss
-
-TBD
-
 ### Binary cross-entropy loss
 
 TBD
@@ -62,12 +58,55 @@ Not really familiar with this concept yet. But info is available [here](https://
 
 ## Log likelihood
 
-When looking at probabilities, we will commonly see they're between 0 and 1, which makes it hard to work with them since multiplying them creates increasingly smaller numbers. To counter this, we use the log likelihood by taking the log of the probability. Giving us a wider range of numbers.
+When looking at probabilities, we will commonly see they're between 0 and 1, which makes it hard to work with them since multiplying them creates increasingly smaller numbers. To counter this, we use the log likelihood by taking the log of the probability. Giving us a better range of numbers.
 
 ### Negative log likelihood
 
 This is the exact same except we invert the values. This is so that we can use it as a loss function and commonly with loss functions we optimize to get them as low as possible. But for a normal log likelihood the extremely negative values mean it's less likely. Inverting fixes that. It's also common to average the negative log likelihood, to give us a better estimation across the data set. This is a popular method when performing classification.
 
+I came back to this trying to remember the purpose of the negative here. An important thing to remember is that when we calculate NLL, we do so on the softmax (or equivalent) of the logits. Which means all values are fractions $$(0,1]$$ (not sure if 0 should instead be inclusive here). Which are always negative when logged. So we invert them to get a positive number.
+
+### Cross-entropy loss
+
+This is another name for log loss likelihood. PyTorch has a really nice [built-in method](../../frameworks/pytorch#cross-entropy) for this.
+
 ## Maximum Likelihood Estimation
 
 This is when you train a model based purely on the statistical information you have access to, optimizing for likelihood of the various parameters.
+
+## Overfitting
+
+Overfitting is when you train the loss of your training set so much that it is too closely tied to that training set. Meaning the validation set will show much worse loss than the training set.
+
+## Initialization
+
+When first running your neural network, if you have an extremely high starting loss, it likely has to do with the weights and biases of your neurons. If they take up a wide range of numbers, that will result in a much greater variance in possible outcomes, increasing the loss function. If you instead start with biases set to 0 and weights multiplied by something like `.1`, you'll have a much smaller starting range. That more uniform distribution helps smooth out the loss.
+
+I'm not sure how this applies to NNs with multiple layers and if you should apply this to the embeddings or not.
+
+### Estimating
+
+You can estimate what your starting loss should be by seeing what the loss would be for the uniform distribution of your data set. Assuming you have a character set of 27 characters, the expected loss would be:
+
+```python
+-torch.tensor(1/27).log()
+# tensor(3.2958)
+```
+
+You can also do this with a negative log softmax
+
+```python
+enc = torch.ones(27)
+print(-torch.softmax(enc, 0).log())
+# tensor(3.2958)
+```
+
+Or cross_entropy
+
+```python
+enc = torch.ones(27)
+hot = torch.zeros(27)
+hot[0]=1
+print(torch.nn.functional.cross_entropy(enc, hot))
+# tensor(3.2958)
+```
