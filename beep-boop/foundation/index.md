@@ -13,10 +13,6 @@ Neural networks **are just math**. Check the sub folders to get started. If you'
 
 Random notes that don't have a home yet.
 
-### Softmax
-
-A [softmax activation function](https://en.wikipedia.org/wiki/Softmax_function) is a mathematical expression that will take the outputs from a layer or a neural network and distributed them into probabilities, such that all the outputs sum to equal 1. This is an easy way to add probability distribution to the output of your net.
-
 ### Hyperparameters
 
 Hyperparameters are design choices made by the creator of the neural network that tune various characteristics of the NN. E.g. how many layers exist in the hidden layer.

@@ -243,3 +243,15 @@ torch.nn.functional.cross_entropy(logits, torch.tensor(ys))
 ```
 
 This function also handles edge cases far better. Because there is a limited range of numbers that computers can represent, if our logits contained `100`, running `.exp()` on that results in `inf`. And adding `inf` to any math really fucks things up. The `cross_entropy` function handles this by subtracting the logits by the largest number in them. Now the max value is 0, but the distributions are all still equal so the probabilities aren't changed at all.
+
+## Visualize Activations
+
+You can visualize the activations of neurons in a specific layer with the following.
+
+```python
+a = torch.randn((30,30))
+plt.figure(figsize=(10,20))
+plt.imshow(a.abs()>.99, cmap='gray', interpolation='nearest')
+```
+
+![Visualizing an activation function](./activation-function.png)
