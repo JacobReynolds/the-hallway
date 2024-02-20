@@ -45,7 +45,7 @@ for i in range(27):
 plt.axis('off')
 
 g = torch.Generator().manual_seed(2147483647)
-prob = (bigram+1).float # +1 is smoothing the model, so there are no zeros that would result in an infinite negative log loss probability
+prob = (bigram+1).float() # +1 is smoothing the model, so there are no zeros that would result in an infinite negative log loss probability
 prob /= prob.sum(1, keepdim=True)
 
 for _ in range(10):
@@ -69,6 +69,8 @@ for _ in range(10):
 # ke.
 # teda.
 ```
+
+![Bigram screenshot](./bigram.png)
 
 We generate statistics for each character pairing, then sample from those statistics to create terrible names.
 
@@ -135,3 +137,7 @@ for _ in range(10):
       break
   print(''.join(out))
 ```
+
+### `xenc @ W`?!
+
+It took me awhile to get my head around exactly what was happening when you do `logits = xenc @ W`. When we did this with the bigram earlier, we could just get the probabilities for each input by calling `prob[char]`. We can actually do that as well here if we really felt like it with `logits = W[ix][None, :]`, however as the math gets more complicated it's easier to stick to the matrix multiplication abstraction of that, which is `xenc @ W`. The `[None, :]` part takes care of converting the 27-length tensor to a `1x27` tensor.
