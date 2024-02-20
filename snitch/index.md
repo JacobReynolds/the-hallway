@@ -2,7 +2,8 @@
 title: snitch
 layout: default
 description: the government is always watching
-nav_order: 12
+order: -12
+icon: squirrel
 ---
 
 # 🤫 Snitch

@@ -1,0 +1,20 @@
+input: .
+output: .retype
+url: the-hallway.jakereynolds.co
+branding:
+  title: the-hallway
+  label: ""
+links:
+- text: Github
+  link: https://github.com/jacobreynolds/the-hallway
+footer:
+  copyright: "&copy; Copyright {{ year }}. All rights reserved."
+
+meta:
+  title: the-hallway
+  description: enjoy the hallways
+
+integrations:
+  plausible:
+    host: metrics.jakereynolds.co
+    domain: the-hallway.jakereynolds.co

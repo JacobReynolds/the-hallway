@@ -4,7 +4,6 @@ layout: default
 parent: Foundation
 description: knobs to help you tune your neural network
 grand_parent: beep boop
-math: katex
 ---
 
 # Hyper parameters

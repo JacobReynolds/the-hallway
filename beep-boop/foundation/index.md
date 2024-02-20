@@ -1,6 +1,6 @@
 ---
 title: Foundation
-nav_order: 1
+order: -1
 layout: default
 parent: beep boop
 description: notes on the foundational aspects of machine learning

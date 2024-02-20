@@ -1,7 +1,9 @@
 ---
 title: hello
+icon: terminal
+description: enjoy the hallways
 layout: default
-nav_order: 1
+order: 1
 ---
 
 # Hey there

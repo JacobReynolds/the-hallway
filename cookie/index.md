@@ -2,7 +2,8 @@
 title: cookie
 layout: default
 description: just put the 5g in me already, bill
-nav_order: 7
+order: -7
+icon: north-star
 ---
 
 # 🍪 Cookie

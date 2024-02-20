@@ -2,7 +2,8 @@
 title: cloud security
 layout: default
 description: for when things get a little misty
-nav_order: 2
+order: -2
+icon: cloud
 ---
 
 # ☁️ Cloud Security, or, mistysec 1.0

@@ -2,7 +2,8 @@
 title: data center
 layout: default
 description: how many licks does it take to get to the center of a data center?
-nav_order: 11
+order: -11
+icon: server
 ---
 
 # 🏙️ Data Center

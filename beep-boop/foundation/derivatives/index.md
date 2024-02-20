@@ -4,7 +4,6 @@ parent: Foundation
 grand_parent: beep boop
 layout: default
 description: take me back to calc 1
-math: katex
 ---
 
 # Derivatives

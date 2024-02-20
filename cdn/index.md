@@ -2,7 +2,8 @@
 title: a cdn?
 layout: default
 description: why not?
-nav_order: 6
+order: -6
+icon: globe
 ---
 
 # 🛜 CDN

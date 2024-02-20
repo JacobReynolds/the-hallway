@@ -1,3 +1,6 @@
 ## Local dev
 
-`docker run -p 4000:4000 -v $(pwd):/site bretfisher/jekyll-serve`
+```
+$> npm i -g retype
+$> retype start
+```
