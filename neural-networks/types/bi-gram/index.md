@@ -1,6 +1,7 @@
 ---
 title: bi-gram language model
 description: bi-gram language model
+order: 1000
 ---
 
 # bi-gram character-level language model

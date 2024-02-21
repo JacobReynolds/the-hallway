@@ -1,6 +1,7 @@
 ---
 title: multi-layer perceptron
 description: multi-layer perceptron neural networks
+order: 999
 ---
 
 Multi-layer perceptrons are the beginnings of a neural network. They consist of multiple layers of [neurons](../../neurons), [normalization layers](../../neurons/normalization), and more to create a neural network. It's important to have a solid understanding of what a [neuron](../../neurons) is before diving in here.
@@ -295,8 +296,9 @@ Xtest, YTest = build_dataset(test_set)
 n_embd = 10
 n_hidden = 200
 
-C = torch.randn((vocab_size, n_embd))
 model = torch.nn.Sequential(
+    torch.nn.Embedding(vocab_size, n_embd),
+    torch.nn.Flatten(),
     torch.nn.Linear(n_embd * block_size, n_hidden, bias=False), torch.nn.BatchNorm1d(n_hidden), torch.nn.Tanh(),
     torch.nn.Linear(n_hidden, n_hidden, bias=False), torch.nn.BatchNorm1d(n_hidden), torch.nn.Tanh(),
     torch.nn.Linear(n_hidden, n_hidden, bias=False), torch.nn.BatchNorm1d(n_hidden), torch.nn.Tanh(),
@@ -322,9 +324,7 @@ for i in range(max_steps):
     ix = torch.randint(0, Xtr.shape[0], (batch_size, ))
     Xb, Yb = Xtr[ix], Ytr[ix]
     # forward pass
-    emb = C[Xb]
-    x = emb.view(emb.shape[0], -1)
-    x = model(x)
+    x = model(Xb)
     loss = torch.nn.functional.cross_entropy(x, Yb)
 
     for p in model.parameters():
@@ -360,8 +360,7 @@ def split_loss(split):
     'val': (Xval, Yval),
     'test': (Xtest, Ytest),
   }[split]
-  emb = C[x]
-  logits = model(emb.view(emb.shape[0], -1))
+  logits = model(x)
   loss = torch.nn.functional.cross_entropy(logits, y)
   print(split, loss.item())
 
@@ -378,11 +377,8 @@ for _ in range(num_examples):
     CONTEXT = [0] * block_size
     out = []
     while True:
-        emb = C[CONTEXT]
-        h = emb.view(1, -1)
-        x = model(h)
-
-        probs = torch.softmax(x, 1)
+        logits = model(torch.tensor([CONTEXT]))
+        probs = torch.softmax(logits, 1)
         ix = torch.multinomial(probs, num_samples=1, replacement=True).item()
         if ix == 0:
             break
@@ -403,3 +399,8 @@ for _ in range(num_examples):
 ```
 
 ===
+
+### Critiques
+
+One critique of MLPs is that the first step in the network crushes all of the data right off the bat, since all of the input embeddings are fed into a single layer. It might be better to work on smaller groupings of characters in multiple layers, so that they may more intelligently come up with relationships. More on that in [wavenet](../wavenet) An example of that is at the beginning of this article, and another example of that crushing can be seen below.
+![multi-layer perceptron](./mlp-2.png)
