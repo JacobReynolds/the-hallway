@@ -12,18 +12,12 @@ Third-party cookies are starting to be <span class="link-underline">[banned](htt
 
 ## Please complete the captcha
 
-<figure>
-<img src="./captcha.webp" alt="Captcha to bury your head in the sand">
-<figcaption>Thanks DALL-E</figcaption>
-</figure>
+![Thanks DALL-E](./captcha.webp)
 Whenever Cloudflare makes you adopt a puppy to prove you're human it tags you with a cookie so everyone knows you're one of the good ones and they don't have to spam check you again for awhile. With the loss of these cookies that mechanism is becoming harder and harder to use. To solve this, various internet giants came up with the [Privacy Pass](https://datatracker.ietf.org/wg/privacypass/about) protocol for secure, anonymous token passing. With this protocol people like Cloudflare can now verify you're a human and issue you a set of tokens, that other websites can request. These tokens are fully(sorta) anonymous and websites can request them to verify you're not a robot, without disclosing who you are. I say sorta because Mozilla [has some issues](https://blog.mozilla.org/en/privacy-security/captcha-successor-privacy-pass-has-no-easy-answers-for-online-abuse/) with Privacy Pass and outlines them explicitly in their [research paper](https://docs.google.com/document/d/1k3QJG2D_Sq4zJiJRn9DfY80hEHuz9UWrJdTt8LbRsMM).
 
 Issues aside, it's an emerging technology that has been adopted by huge providers, but has limited tooling available for it outside of those providers. You'll see various implementations of the protocol like Apple's [Private Access Tokens](https://developer.apple.com/news/?id=huqjyh7k) or Google's [Private State Tokens](https://developers.google.com/privacy-sandbox/protections/private-state-tokens). These implementations typically provide both major parts of the protocol by themselves: the Attester and the Issuer. The attester validates that you are human and the issuer issues you a set of tokens that can be exchanged with other websites to prove you've been attested. Interestingly enough, you can submit to Apple to become an Issuer as long as you fit some criteria.
 
-<details>
-  <summary>Apple's PAT issuer requirements</summary>
-  <img src="./apple.png">
-</details>
+![Apple's PAT issuer requirements](./apple.png)
 
 And Google simply requires you to open an issue on their [Github repo](https://github.com/GoogleChrome/private-tokens).
 

@@ -12,14 +12,11 @@ Not exactly a CDN, more of a WAAP, but anytime I say WAAP people starting singin
 
 To give you an introduction to what I built, these two diagrams can be pretty helpful and are explained below.
 
-<details>
-  <summary>Infrastructure Diagram</summary>
-  <img src="./arch.png">
-</details>
-<details>
-  <summary>WAF Request Lifecycle</summary>
-  <img src="./lifecycle.png">
-</details>
+==- Infrastructure Diagram
+![](./arch.png)
+==- WAF Request Lifecycle
+![](./lifecycle.png)
+===
 
 ## Cheap AF
 
