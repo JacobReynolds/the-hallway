@@ -17,7 +17,10 @@ Whenever Cloudflare makes you adopt a puppy to prove you're human it tags you wi
 
 Issues aside, it's an emerging technology that has been adopted by huge providers, but has limited tooling available for it outside of those providers. You'll see various implementations of the protocol like Apple's [Private Access Tokens](https://developer.apple.com/news/?id=huqjyh7k) or Google's [Private State Tokens](https://developers.google.com/privacy-sandbox/protections/private-state-tokens). These implementations typically provide both major parts of the protocol by themselves: the Attester and the Issuer. The attester validates that you are human and the issuer issues you a set of tokens that can be exchanged with other websites to prove you've been attested. Interestingly enough, you can submit to Apple to become an Issuer as long as you fit some criteria.
 
-![Apple's PAT issuer requirements](./apple.png)
+==- Apple's PAT issuer requirements
+![](./apple.png)
+
+===
 
 And Google simply requires you to open an issue on their [Github repo](https://github.com/GoogleChrome/private-tokens).
 
