@@ -5,43 +5,38 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761851822679">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761854029846">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>loss | the-hallway</title>
-    <meta name="title" content="loss | the-hallway">
-    <meta name="description" content="calculations to help you tune your neural network">
+    <title>neural networks | the-hallway</title>
+    <meta name="title" content="neural networks | the-hallway">
+    <meta name="description" content="notes on the foundational aspects of neural networks">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://the-hallway.jakereynolds.co/machine-learning/foundation/loss/">
+    <link rel="canonical" href="https://the-hallway.jakereynolds.co/neural-networks/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://the-hallway.jakereynolds.co/machine-learning/foundation/loss/">
-    <meta property="og:title" content="loss | the-hallway">
-    <meta property="og:description" content="calculations to help you tune your neural network">
-    <meta property="og:image" content="https://the-hallway.jakereynolds.co/machine-learning/foundation/loss/mean-squared-loss.png">
+    <meta property="og:url" content="https://the-hallway.jakereynolds.co/neural-networks/">
+    <meta property="og:title" content="neural networks | the-hallway">
+    <meta property="og:description" content="notes on the foundational aspects of neural networks">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://the-hallway.jakereynolds.co/machine-learning/foundation/loss/">
-    <meta property="twitter:title" content="loss | the-hallway">
-    <meta property="twitter:description" content="calculations to help you tune your neural network">
-    <meta property="twitter:image" content="https://the-hallway.jakereynolds.co/machine-learning/foundation/loss/mean-squared-loss.png">
+    <meta property="twitter:url" content="https://the-hallway.jakereynolds.co/neural-networks/">
+    <meta property="twitter:title" content="neural networks | the-hallway">
+    <meta property="twitter:description" content="notes on the foundational aspects of neural networks">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.761851822679" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.5.0.761854029846" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.761851822679" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.761851822679" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.761851822679" defer></script>
-    <link href="../../../resources/css/katex.css?v=3.5.0" rel="stylesheet">
-    <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.5.0" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.761854029846" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.761854029846" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -56,7 +51,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-2xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">the-hallway</span>
                         </a>
                     </div>
@@ -170,143 +165,30 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="loss" class="break-words">
+<doc-anchor-target id="neural-networks" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#loss">#</doc-anchor-trigger>
-        <span>loss</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#neural-networks">#</doc-anchor-trigger>
+        <span>neural networks</span>
     </h1>
 </doc-anchor-target>
-<h1><pre>
-| ||
-|| |_
-</pre></h1>
-<p>The loss is a single number that helps us understand the performance of the neural network. The loss function is how we calculate that number. A lot of the time in training a neural network is spent optimizing this loss function.</p>
-<p>It&#x27;s important to understand <a href="../gradient-descent/#how-gradients-relate-to-the-loss">how the gradients of the neural network relate to the loss</a>.</p>
-<doc-anchor-target id="mean-squared-error-loss">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mean-squared-error-loss">#</doc-anchor-trigger>
-        <span>Mean-squared error loss</span>
-    </h2>
-</doc-anchor-target>
-<p>You calculate this by subtracting the actual output of the neural network from the expected output, squaring them, and then taking the mean of all values you tested. I <em>think</em> this helps exaggerate values that are far from correct and shrink values that are closer to correct. But it also has the primary benefit of getting rid of the sign of the values, similar to <span class="math">abs</span>.</p>
-<p>The curious thing to me is that we don&#x27;t actually take the mean of the summated squared losses, at least not in anything I&#x27;ve seen so far. So I&#x27;m hoping to figure that out. It seems like the division by <span class="math">N</span> doesn&#x27;t really matter, it&#x27;s the squaring of the loss values that actually give us our metrics. Everything else is just syntactic sugar. This is a popular method when performing regression.</p>
-<p><figure class="content-center">
-    <img src="mean-squared-loss.png" alt="" title="Mathematical expression of mean squared loss">
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<doc-anchor-target id="example">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example">#</doc-anchor-trigger>
-        <span>Example</span>
-    </h2>
-</doc-anchor-target>
-<p>If we use our <a href="../multi-layer-perceptron/">multi-layer perceptron</a> we can provide it with our initial inputs <code v-pre>xs</code> and our expected outputs <code v-pre>ys</code> for 4 passes, feed those through the MLP, and then calculate the loss.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">n = MLP(3, [4, 4, 1])
-xs = [
-  [2.0, 3.0, -1.0],
-  [3.0, -1.0, 0.5],
-  [0.5, 1.0, 1.0],
-  [1.0, 1.0, -1.0],
-]
-ys = [1.0, -1.0, -1.0, 1.0]
-ypred = [n(x) for x in xs]
-
-loss = sum((yout - ygt)**2 for ygt, yout in zip(ys, ypred))
-
-# 7.817821598365237</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="binary-cross-entropy-loss">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#binary-cross-entropy-loss">#</doc-anchor-trigger>
-        <span>Binary cross-entropy loss</span>
-    </h3>
-</doc-anchor-target>
-<p>TBD</p>
-<doc-anchor-target id="max-margin-loss">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#max-margin-loss">#</doc-anchor-trigger>
-        <span>Max-margin loss</span>
-    </h2>
-</doc-anchor-target>
-<p>TBD</p>
-<doc-anchor-target id="regularization">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#regularization">#</doc-anchor-trigger>
-        <span>Regularization</span>
-    </h2>
-</doc-anchor-target>
-<p>Not really familiar with this concept yet. But info is available <a href="https://developers.google.com/machine-learning/crash-course/regularization-for-simplicity/l2-regularization">here</a>. It seems to be a way to try and smooth out irregularities in your model. One example is taking all of your neurons squaring them, taking the mean, and then multiplying that value by a small number like .01. You then add that to your loss function and it helps the loss function force your weights to be zero. More on that <a href="https://youtu.be/PaCmpygFfXo?si=oNApqfob8J9w3hhG&amp;t=6817">here</a>.</p>
-<doc-anchor-target id="log-likelihood">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#log-likelihood">#</doc-anchor-trigger>
-        <span>Log likelihood</span>
-    </h2>
-</doc-anchor-target>
-<p>When looking at probabilities, we will commonly see they&#x27;re between 0 and 1, which makes it hard to work with them since multiplying them creates increasingly smaller numbers. To counter this, we use the log likelihood by taking the log of the probability. Giving us a better range of numbers.</p>
-<doc-anchor-target id="negative-log-likelihood">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#negative-log-likelihood">#</doc-anchor-trigger>
-        <span>Negative log likelihood</span>
-    </h3>
-</doc-anchor-target>
-<p>This is the exact same except we invert the values. This is so that we can use it as a loss function and commonly with loss functions we optimize to get them as low as possible. But for a normal log likelihood the extremely negative values mean it&#x27;s less likely. Inverting fixes that. It&#x27;s also common to average the negative log likelihood, to give us a better estimation across the data set. This is a popular method when performing classification.</p>
-<p>I came back to this trying to remember the purpose of the negative here. An important thing to remember is that when we calculate NLL, we do so on the softmax (or equivalent) of the logits. Which means all values are fractions <span class="math">(0,1]</span> (not sure if 0 should instead be inclusive here). Which are always negative when logged. So we invert them to get a positive number.</p>
-<doc-anchor-target id="cross-entropy-loss">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#cross-entropy-loss">#</doc-anchor-trigger>
-        <span>Cross-entropy loss</span>
-    </h3>
-</doc-anchor-target>
-<p>This is another name for log loss likelihood. PyTorch has a really nice <a href="../../frameworks/pytorch/#cross-entropy">built-in method</a> for this.</p>
-<doc-anchor-target id="maximum-likelihood-estimation">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#maximum-likelihood-estimation">#</doc-anchor-trigger>
-        <span>Maximum Likelihood Estimation</span>
-    </h2>
-</doc-anchor-target>
-<p>This is when you train a model based purely on the statistical information you have access to, optimizing for likelihood of the various parameters.</p>
-<doc-anchor-target id="overfitting">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#overfitting">#</doc-anchor-trigger>
-        <span>Overfitting</span>
-    </h2>
-</doc-anchor-target>
-<p>Overfitting is when you train the loss of your training set so much that it is too closely tied to that training set. Meaning the validation set will show much worse loss than the training set.</p>
-<doc-anchor-target id="initialization">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#initialization">#</doc-anchor-trigger>
-        <span>Initialization</span>
-    </h2>
-</doc-anchor-target>
-<p>When first running your neural network, if you have an extremely high starting loss, it likely has to do with the weights and biases of your neurons. If they take up a wide range of numbers, that will result in a much greater variance in possible outcomes, increasing the loss function. If you instead start with biases set to 0 and weights multiplied by something like <code v-pre>.1</code>, you&#x27;ll have a much smaller starting range. That more uniform distribution helps smooth out the loss.</p>
-<p>I&#x27;m not sure how this applies to NNs with multiple layers and if you should apply this to the embeddings or not.</p>
-<doc-anchor-target id="estimating">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#estimating">#</doc-anchor-trigger>
-        <span>Estimating</span>
-    </h3>
-</doc-anchor-target>
-<p>You can estimate what your starting loss should be by seeing what the loss would be for the uniform distribution of your data set. Assuming you have a character set of 27 characters, the expected loss would be:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">-torch.tensor(1/27).log()
-# tensor(3.2958)</code></pre>
-</doc-codeblock></div>
-<p>You can also do this with a negative log softmax</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">enc = torch.ones(27)
-print(-torch.softmax(enc, 0).log())
-# tensor(3.2958)</code></pre>
-</doc-codeblock></div>
-<p>Or cross_entropy</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">enc = torch.ones(27)
-hot = torch.zeros(27)
-hot[0]=1
-print(torch.nn.functional.cross_entropy(enc, hot))
-# tensor(3.2958)</code></pre>
-</doc-codeblock></div>
+<p>This is my working area for my current machine learning research. I&#x27;m starting back at the basics to try and rebuild my foundational knowledge. Most of this is my note taking while following Andrej Karpathy&#x27;s <a href="https://www.youtube.com/watch?v=VMj-3S1tku0&amp;list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ">Neural Networks: Zero to Hero</a> course on Youtube. Fun fact: did you know he was <a href="https://www.youtube.com/@badmephisto">badmephisto</a>?!?! I used his cubing tutorials a decade ago, insane.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-red-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-red-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21.71 6.15L15.85.29c-.19-.18-.44-.29-.71-.29H6.86c-.27 0-.52.11-.71.29L.29 6.15c-.18.19-.29.44-.29.71v8.28c0 .27.11.52.29.71l5.86 5.86c.19.18.44.29.71.29h8.28c.27 0 .52-.11.71-.29l5.86-5.86a.99.99 0 00.29-.71V6.86c0-.27-.11-.52-.29-.71zM20 14.73L14.73 20H7.27L2 14.73V7.27L7.27 2h7.45L20 7.27v7.46z"></path>
+                    <path d="M11 12c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .55.45 1 1 1zM11.01 14c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Warning</h5>
+<p>This section is a heavy work in progress and contains many factual inaccuracies. Additionally, it&#x27;s a summation of various materials I&#x27;ve used to teach myself and they may not all be attributed. Nothing in here is a novel idea and was usually taken from somewhere else. I try to credit sources where appropriate.</p>
+        </div>
+    </div>
+</div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -316,20 +198,20 @@ print(torch.nn.functional.cross_entropy(enc, hot))
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../machine-learning/foundation/hyper-parameters/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../start-ups/snitch/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">hyper parameters</span>
+                                                <span class="block mt-1">snitch</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../machine-learning/foundation/multi-layer-perceptron/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../neural-networks/neurons/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">multi-​layer perceptron</span>
+                                                <span class="block mt-1">neurons</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -373,6 +255,6 @@ print(torch.nn.functional.cross_entropy(enc, hot))
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "loss", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "neural networks", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
