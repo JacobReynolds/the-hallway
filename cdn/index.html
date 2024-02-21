@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761791499179">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761791600550">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -23,20 +23,22 @@
     <meta property="og:url" content="https://the-hallway.jakereynolds.co/cdn/">
     <meta property="og:title" content="a cdn?the-hallway">
     <meta property="og:description" content="why not?">
+    <meta property="og:image" content="https://the-hallway.jakereynolds.co/cdn/arch.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://the-hallway.jakereynolds.co/cdn/">
     <meta property="twitter:title" content="a cdn?the-hallway">
     <meta property="twitter:description" content="why not?">
+    <meta property="twitter:image" content="https://the-hallway.jakereynolds.co/cdn/arch.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.5.0.761791499179" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.5.0.761791600550" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.761791499179" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.761791600550" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.761791499179" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.761791600550" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -173,14 +175,24 @@
 </doc-anchor-target>
 <p>Not exactly a CDN, more of a WAAP, but anytime I say WAAP people starting singing Cardi B lyrics at me. WAAP stands for Web Application and API Protection. The common example would be <a href="https://www.cloudflare.com/">Cloudflare</a>, but more closely would be <a href="https://www.imperva.com/">Imperva</a> and <a href="https://www.akamai.com/">Akamai</a>. These platforms proxy all of your traffic and perform DDOS protection, bot mitigation, web firewall rule matching, API inventorying, and more. Similar in grandiose size to <a href="../bank/">a bank</a>, but far more in my wheelhouse. At this point I&#x27;m about 4 weeks into my start up journey and am getting a bit sick of cold outreach on LinkedIn, so I decided to grace myself with a little technical research. I knew there was a market for this, I wasn&#x27;t quite sure what my differentiator would be, but I wanted to see if I could get the basic concepts built first to recharge my batteries a bit.</p>
 <p>To give you an introduction to what I built, these two diagrams can be pretty helpful and are explained below.</p>
-<details>
-  <summary>Infrastructure Diagram</summary>
-  <img src="./arch.png">
-</details>
-<details>
-  <summary>WAF Request Lifecycle</summary>
-  <img src="./lifecycle.png">
-</details>
+<doc-panels>
+   <doc-panel id="infrastructure-diagram" collapsed>
+       <template #title>Infrastructure Diagram</template>
+<p><figure class="content-center">
+    <img src="arch.png" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+   </doc-panel>
+   <doc-panel id="waf-request-lifecycle" collapsed>
+       <template #title>WAF Request Lifecycle</template>
+<p><figure class="content-center">
+    <img src="lifecycle.png" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+   </doc-panel>
+</doc-panels>
 <doc-anchor-target id="cheap-af">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#cheap-af">#</doc-anchor-trigger>
