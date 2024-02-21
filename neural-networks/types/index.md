@@ -1,9 +1,9 @@
 ---
-title: model types
-description: different types of machine learning models
+title: types
+description: different types of neural networks
 ---
 
-# Model Types
+# types of neural networks
 
 Introductory explanations of the different types of model types that exist. Notes that apply to multiple types will commonly end up in this document. Models isn't necessarily the best word for everything in here, but I'll take it.
 

@@ -3,13 +3,13 @@ title: back propagation
 description: calculating gradients across your neural network
 ---
 
-# Back Propagation
-
-Back propagation is the process of taking a series of [neurons](../neuron), starting at the end, and calculating the effect each neuron has on the outcome of the network. We do this by calculating the gradient (see [derivative](../derivatives/)) of each node.
+Back propagation is the process of taking a series of [neurons](../neuron), starting at the end, and calculating the effect each neuron has on the outcome of the network. We do this by calculating the gradient (see [derivative](../derivatives/)) of each node. A popular use of back propagation is [gradient descent](../gradient-descent/).
 
 ## Code
 
 Here's an example of an individual value node that would exist inside of a chain of nodes and the functions it needs for back propagation. You can think of a value node as a simplified neuron.
+
+==- Code example
 
 ```python
 class Value:
@@ -110,3 +110,5 @@ class Value:
     for node in reversed(topo):
       node._backward()
 ```
+
+===

@@ -13,6 +13,8 @@ We do this by performing [back propagation](../back-propagation/) across somethi
 
 Building off the [multi-layer perceptron](../multi-layer-perceptron/) implementation, we can perform gradient descent with the following:
 
+==- Code example
+
 ```python
 n = MLP(3, [4, 4, 1])
 xs = [
@@ -41,6 +43,7 @@ for k in range(20):
   print(k, loss.data)
 ```
 
+===
 The reasoning for `-0.1` here is actually super important. We have to remember the goal of this gradient descent is to lower the value of the loss function as much as possible. So when tuning our weights, we want to tune them such that they _decrease_ the loss function. Luckily we know that the gradient will tell us how much that value will change the output. Let's look at some examples:
 
 $$

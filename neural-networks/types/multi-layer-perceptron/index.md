@@ -1,83 +1,68 @@
 ---
-title: character level
-description: character level language models
+title: multi-layer perceptron
+description: multi-layer perceptron neural networks
 ---
 
-# Character-level Language Models
+Multi-layer perceptrons are the beginnings of a neural network. They consist of multiple layers of [neurons](../../neurons), [normalization layers](../../neurons/normalization), and more to create a neural network. It's important to have a solid understanding of what a [neuron](../../neurons) is before diving in here.
 
-These models are able to predict the next character given a sequence of 1 or more previous characters. These are as opposed to [word-level language models](../word-level/).
+Since I'm very code inclined, here's the python that implements the following image:
 
-## Bi-gram
+![](./mlp.jpeg "a multilayer perceptron")
 
-Predicts the next character in the sequence exclusively based on the current character. We do this by taking all of the character pairs in every word in the data set and calculating how often the first character is succeeded by the second character. We can store this in a 2d array with the rows being the first character and the columns being the second. We'll also add an extra row for the [start and stop token](../index.md#start-and-stop-tokens).
-
-A nice code-based representation of this is as follows:
+The following code also uses the `Value` class from [Back Propagation](../../back-propagation/)
 
 ```python
-import torch
-import matplotlib.pyplot as plt
-%matplotlib inline
+class Neuron:
 
-words = open('names.txt', 'r').read().splitlines()
-TOKEN='.'
+  def __init__(self, nin):
+    self.w = [Value(random.uniform(-1,1)) for _ in range(nin)]
+    self.b = Value(random.uniform(-1,1))
 
-bigram = torch.zeros(27,27, dtype=torch.int32)
+  def __call__(self, x):
+    # w * x + b
+    act = sum((wi*xi for wi, xi in zip(self.w, x)), self.b)
+    out = act.tanh()
+    return out
 
-chars = list(set(''.join(words)+TOKEN))
-chars.sort()
-stoi = dict([(ch, i) for i, ch in enumerate(chars)])
-itos = dict([(i, ch) for ch, i in stoi.items()])
-for word in words:
-    word = TOKEN+word+TOKEN
-    for ch1, ch2 in zip(word, word[1:]):
-        bigram[stoi.get(ch1), stoi.get(ch2)]+=1
+  def parameters(self):
+    return self.w + [self.b]
 
-plt.figure(figsize=(16,16))
-plt.imshow(bigram, cmap='Blues')
-for i in range(27):
-    for j in range(27):
-        chstr = itos[i] + itos[j]
-        plt.text(j, i, chstr, ha="center", va="bottom", color='gray')
-        plt.text(j, i, bigram[i, j].item(), ha="center", va="top", color='gray')
-plt.axis('off')
+class Layer:
 
-g = torch.Generator().manual_seed(2147483647)
-prob = (bigram+1).float() # +1 is smoothing the model, so there are no zeros that would result in an infinite negative log loss probability
-prob /= prob.sum(1, keepdim=True)
+  def __init__(self, nin, nout):
+    self.neurons = [Neuron(nin) for _ in range(nout)]
 
-for _ in range(10):
-    char = 0
-    out=''
-    while True:
-        char = torch.multinomial(prob[char], num_samples=1, replacement=True, generator=g).item()
-        out += itos[char]
-        if char == 0:
-            break
-    print(out)
+  def __call__(self, x):
+    outs = [n(x) for n in self.neurons]
+    return outs[0] if len(outs) == 1 else outs
 
-# cexze.
-# momasurailezitynn.
-# konimittain.
-# llayn.
-# ka.
-# da.
-# staiyaubrtthrigotai.
-# moliellavo.
-# ke.
-# teda.
+  def parameters(self):
+    return [p for neuron in self.neurons for p in neuron.parameters()]
+
+class MLP:
+
+  def __init__(self, nin, nouts):
+    sz = [nin] + nouts
+    self.layers = [Layer(sz[i], sz[i+1]) for i in range(len(nouts))]
+
+  def __call__(self, x):
+    for layer in self.layers:
+      x = layer(x)
+    return x
+
+  def parameters(self):
+    return [p for layer in self.layers for p in layer.parameters()]
+
+x = [2.0, 3.0, -1.0]
+n = MLP(3, [4, 4, 1])
+n(x)
 ```
 
-![](./bigram.png "Bigram screenshot")
+## single-layer perceptron
 
-We generate statistics for each character pairing, then sample from those statistics to create terrible names.
+If we take the [bi-gram example](../bi-gram/) we can easily expand off of it to create a neural network with one layer of inputs and one layer of outputs and get roughly the same result.
 
-### Weights and biases
-
-Since this isn't a neural network, there aren't weights and biases. However, there are still parameters. In this case, the likelihood of each character pairing is considered a parameter.
-
-## Bi-gram converted to a single-layer neural network
-
-If we take the bi-gram example we can easily expand off of it to create a neural network with one layer of inputs and one layer of outputs and get roughly the same result.
+==- Code example
 
 ```python
 import torch
@@ -116,7 +101,11 @@ for _ in range(200):
   W.data += -50 * W.grad
 ```
 
+===
+
 And then we can sample from this simple neural network with the following
+
+==- Code example
 
 ```python
 for _ in range(10):
@@ -135,17 +124,24 @@ for _ in range(10):
   print(''.join(out))
 ```
 
+===
+
 ### `xenc @ W`?!
 
 It took me awhile to get my head around exactly what was happening when you do `logits = xenc @ W`. When we did this with the bigram earlier, we could just get the probabilities for each input by calling `prob[char]`. We can actually do that as well here if we really felt like it with `logits = W[ix][None, :]`, however as the math gets more complicated it's easier to stick to the matrix multiplication abstraction of that, which is `xenc @ W`. The `[None, :]` part takes care of converting the 27-length tensor to a `1x27` tensor.
 
-## Tri-gram (quad-gram?) multi-layer perceptron
+## multi-layer perceptron
 
+A multi-layer perceptron builds off of the single-layer perceptron concept, but adds in the concepts of [activation functions](../../neurons/activation-functions), [normalization](../../neurons/normalization), and more.
 The hardest thing for me to grasp in this is the embedding space. In the following code, you'll see we have a hyper parameter called `EMBEDDING_SPACE` which is 2. This means that for every character `a-z.` in our input, that character lives in 2d space and can be plotted with an x,y axis. When visualizing this, the groupings of these characters represent how closely the neural network thinks they're related.
 
+==- Visualization of embeddings
 ![](./embeddings.png "2d visualization of the embeddings")
+===
 
 When we increase the embedding space, we're essentially giving the neural network more dimensions to tune to gauge similarity between the input characters. So it can relate them amongst a variety of commonalities.
+
+==- Code example
 
 ```python
 import torch
@@ -255,3 +251,5 @@ for _ in range(10):
         out.append(itos[ix])
     print(''.join(out))
 ```
+
+===
