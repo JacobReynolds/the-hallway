@@ -12,7 +12,7 @@ An MLP consists of many layers of [neurons](../neuron/) lined up in order and fe
 
 Since I'm very code inclined, here's the python that implements the following image:
 
-![a multilayer perceptron](./mlp.jpeg)
+![](./mlp.jpeg "a multilayer perceptron")
 
 The following code also uses the `Value` class from [Back Propagation](../back-propagation/)
 

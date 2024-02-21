@@ -39,4 +39,4 @@ plt.plot(lri, lossi)
 
 ```
 
-![Line graph showing learning rate decay](./learning-rate-decay.png)
+![](./learning-rate-decay.png "Line graph showing learning rate decay")

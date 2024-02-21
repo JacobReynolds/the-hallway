@@ -8,7 +8,7 @@ icon: briefcase
 
 # 💼 Business models
 
-![Business handshake](./business.gif)
+![](./business.gif "Business handshake")
 
 Ahh yes, business. The reason we all get to wear silly little clothes and get up early every day. A big part of starting my own company (TBD) was being able to create an environment that matched the way I believe a business should be run. One that fits the way I want to live my life in general. This is a surprisingly huge problem area that I don't think enough founders spend time to think about before building their start up. Everyone wants to shoot for the moon, make a billion dollars, but forget they have to live a life during all of that as well.
 

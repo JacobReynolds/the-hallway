@@ -9,7 +9,7 @@ grand_parent: beep boop
 # Neuron
 
 Neurons are exactly what they sound like, the things in our brain!
-![Diagram of a neuron](./neuron_model.jpeg)
+![](./neuron_model.jpeg "Diagram of a neuron")
 
 In machine learning, we model these in neural networks to simulate how the brain works. Neurons take in a series of values (x) and weights (w), which are individually multiplied and then added. The neuron fires by taking these and adding the bias of the neuron (how trigger happy it is) and passing it through an [activation function](#activation-functions) which helps squash the values to something like -1 to 1. This is usually `tanh` or a `sigmoid` function.
 
@@ -31,7 +31,7 @@ Much like [weights](#weights), biases are also randomly chosen and updated throu
 
 ## Activation functions
 
-![Image showing common activation functions](./activation_functions.png)
+![](./activation_functions.png "Image showing common activation functions")
 Activation functions are called on the dot product of the weights and their inputs plus the bias of a neuron. This function helps us control the types of outputs we want to come from our neuron.
 
 When using activation functions its important to look at how the weights of that neuron affect the activation function. For example if you're using $$tanh$$ which squashes your values to $$[-1,1]$$ and you have a lot of values $$>10$$ or $$<10$$ you'll have a lot of values that are $$-1$$ and $$1$$ which basically makes the neuron useless. You can [visualize this in PyTorch](../../frameworks/pytorch#visualize-activations) quite nicely as well.

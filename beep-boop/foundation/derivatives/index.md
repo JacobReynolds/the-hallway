@@ -45,7 +45,7 @@ Which if we take the derivative of $$f(x)$$ where $$x = 3$$ we get $$f'(x) = 6x 
 
 This is important, because as we start making complex chains of nodes (a neural net), we want to know the derivative of the output wrt the individual nodes. That way we can tell how we have to change that node to manipulate the output of the function.
 
-![Screenshot showing gradient nodes](./derivatives_nodes.png)
+![](./derivatives_nodes.png "Screenshot showing gradient nodes")
 
 This is a good example, where we would want to know the derivative of L wrt c, so we know how to change c to impact L.
 
@@ -89,7 +89,7 @@ The chain rule, in simple terms, says that if you have a composite function $$f(
 
 More simply, as we navigate through back propagation, we will want to identify how one node affects the loss function. But this node could be one of many.
 
-![Screenshot showing nodes](./chain_rule_grad.png)
+![](./chain_rule_grad.png "Screenshot showing nodes")
 
 Using the above example, the local derivative of $$c \space w.r.t \space d$$ is 1, because it’s [addition](#addition). But how does $$c$$ affect $$L$$? The [Chain Rule](https://en.wikipedia.org/wiki/Chain_rule) gives us this. And what it says is, using the above variable names
 
@@ -98,7 +98,7 @@ $$
 $$
 
 Which in this case is $$-2 \cdot 1 = -2$$. Why is $$\frac{dd}{dc}=1$$? See [addition](#addition). It's even nicer because as we get further along the back propagation we only need to multiply the local derivative by the gradient of the grandparent node. Take the following:
-![Larger screenshot showing nodes](./chain_rule_ext.png)
+![](./chain_rule_ext.png "Larger screenshot showing nodes")
 If we want to do $$\frac{dL}{da}$$ we would only need to do $$\frac{de}{da} \cdot \frac{dd}{de}$$, since it's all multiplication we don't have to chain it all the way back to L.
 
 Another cool thing here is that since the back propagation only relies on multiplying the local derivative with the grandparent derivative, the calculation can be arbitrarily complex. It doesn't have to be $$+$$ or $$*$$ between nodes, it can be anything as long as we can derive it. This is helpful when doing back propagation on a [neuron](../neuron) that has an activation function, so we can derive the value inclusive of the activation function.
@@ -106,7 +106,7 @@ Another cool thing here is that since the back propagation only relies on multip
 ### Addition
 
 Doing the derivative of an additive operation w.r.t. a node is pretty easy. It equals 1. Why is that true? Take these nodes for example
-![Screenshot showing nodes](./chain_rule_grad.png)
+![](./chain_rule_grad.png "Screenshot showing nodes")
 
 $$
 d = c + e

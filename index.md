@@ -18,9 +18,6 @@ Even more concerning to some people, I did so with no idea about what I wanted t
 
 I kind of hate the current hustle culture of audience building, twitter slams, and whatnot, but I do still love writing. I've always enjoyed being able to express myself in a format outside of my head, so this isn't my attempt at building a substack that pulls in $5/mo, but to document my attempts at building something I love, and sharing some of the cool learnings along the way. Grammar be damned, I'll at least get some thoughts out there.
 
-<figure>
-<img src="./office.jpeg" />
-<figcaption>My small home away from home</figcaption>
-</figure>
+![My small home away from home](./office.jpeg "My small home away from home")
 
 To begin, I've leased a 60 ft<sup>2</sup> (5 1/2 m<sup>2</sup>) windowless co-working space to trap myself in 8 hours a day and try some cool shit. See ya soon.

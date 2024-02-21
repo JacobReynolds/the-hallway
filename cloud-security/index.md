@@ -36,16 +36,13 @@ So that's it then, be wiz.io for the little guys. Offer enterprise security tool
 
 One of the things that I have going for me is I use to be a hacker (I'd argue I still am, but would never win a CTF at this point). I want to find users of Render and Supabase and ask them about their cybersecurity needs. In cybersecurity, we call this Open Source Intelligence (OSINT) and luckily for me, man is there a lot of it for this use case. For someone to use Render or Supabase they have to update their DNS records and point their domains to ones owned by the cloud provider. I could go around scraping and abusing DNS all around the world, or I could just use our friends over at [host.io](https://host.io). You can look up a domain name or [Autonomous System Number](https://www.cloudflare.com/learning/network-layer/what-is-an-autonomous-system/) (ASN) and see all domain names that point to it.
 
-<video width="100%" alt="Video showing a user accessing host.io" controls>
-  <source src="./RenderNameLookup.mp4" type="video/mp4">
-Your browser does not support videos.
-</video>
+[!embed el="embed"](./RenderNameLookup.mp4)
 
 After buying $500 worth of API tokens, I was able to start pulling all of these domain names down and prioritize who to reach out to. There were 27k domains, so how can I identify legitimate companies and not small blogging websites? In an ideal world, I'd use [zoominfo](https://zoominfo.com) but they don't really service companies of my size. Luckily for me, [Hubspot](https://hubspot.com) exists. I was able to sign up for their Starter Suite for only $240/year and get access to a pretty sweet set of tools. From there I imported all the domain names and hubspot automatically correlated the domain names to businesses, providing me their sector, revenue, employee count, and more. Unfortunately a lot of this data was pretty hit and miss, it would end up correlating small businesses on the platform to major providers. I doubt your local community center is doing $1,000,000,000 in revenue. I spent a good few days parsing through this data in a variety of ways.
 
 After finding an eligible business, I would look it up on [LinkedIn Sales Navigator](https://business.linkedin.com/sales-solutions/sales-navigator) and reach out to the most senior technical leadership or founder with a message along the lines of:
 
-![Linkedin message asking for advisors](./LinkedinOutreach.png)
+![](./LinkedinOutreach.png "Linkedin message asking for advisors")
 
 Sales is a funky thing for me and I imagine most technical people. It can come off as pretty ingenuine and scammy. In most cases, it usually is, so that's a fair thought. Like most things though, I think if you're a good person, working with good people, everyone benefits. To me it felt weird sending hundreds of LI connections asking for advisors, but I routinely found that when I got on a call with someone they were kind and gracious and happy to help. I'm immensely grateful to the people that have taken me up on these offers in their various forms.
 
@@ -59,10 +56,8 @@ Side-note: this is a common thing you'll see in my writing and exploration. I've
 
 I realized I shot pretty far downstream from AWS to Supabase, so I look at who might be in the middle. It turns out there's a pretty mature middle market for cloud providers, comprised mainly of companies like [OVHCloud](https://us.ovhcloud.com/), [Vultr](https://www.vultr.com/), and [Hetzner](https://www.hetzner.com/). Wash, rinse, and repeat. I went to host.io (finally putting that $500 to work) and started pulling customers for these providers. Immediately, I'm motivated by seeing how much larger their client base is from the previous providers.
 
-<figure class="small">
-<img src="./OVHCloud.png" alt="OVH Cloud has 7 million+ domains pointing to them"/>
-<figcaption>7 million OVHCloud domains</figcaption>
-</figure>
+![OVH Cloud has 7 million+ domains pointing to them](./OVHCloud.png "7 million OVHCloud domains")
+
 And that was another week, scraping, triaging the information, reaching out on LinkedIn, and talking with customers of those platforms. Again, I was surprised that even at this level, aside from some whales, there didn't seem to be a large client base that would be spending enterprise dollars on security. I found a lot of wordpress hosting providers, game server hosting companies, the odd tech company, but no one I met with said that security was in their budget. I'm sure the people are out there, but I couldn't find them. Even now I'm doubting myself and thinking I should go back and keep trying to find those companies, but moving fast is important and I felt this was a big enough barrier to warrant moving on.
 
 ## Thanks for the fish

@@ -70,7 +70,7 @@ for _ in range(10):
 # teda.
 ```
 
-![Bigram screenshot](./bigram.png)
+![](./bigram.png "Bigram screenshot")
 
 We generate statistics for each character pairing, then sample from those statistics to create terrible names.
 
@@ -146,7 +146,7 @@ It took me awhile to get my head around exactly what was happening when you do `
 
 The hardest thing for me to grasp in this is the embedding space. In the following code, you'll see we have a hyper parameter called `EMBEDDING_SPACE` which is 2. This means that for every character `a-z.` in our input, that character lives in 2d space and can be plotted with an x,y axis. When visualizing this, the groupings of these characters represent how closely the neural network thinks they're related.
 
-![2d visualization of the embeddings](./embeddings.png)
+![](./embeddings.png "2d visualization of the embeddings")
 
 When we increase the embedding space, we're essentially giving the neural network more dimensions to tune to gauge similarity between the input characters. So it can relate them amongst a variety of commonalities.
 

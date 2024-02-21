@@ -12,7 +12,7 @@ If you read the word pytorch over and over, it really starts to lose it's meanin
 
 Here's a simple tree showing the equation and back propagation we're doing, alongside the torch code to calculate the same.
 
-![DAG of nodes for a math equation](./equation.png)
+![](./equation.png "DAG of nodes for a math equation")
 
 ```python
 import torch
@@ -254,4 +254,4 @@ plt.figure(figsize=(10,20))
 plt.imshow(a.abs()>.99, cmap='gray', interpolation='nearest')
 ```
 
-![Visualizing an activation function](./activation-function.png)
+![](./activation-function.png "Visualizing an activation function")
