@@ -11,34 +11,37 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>intro | the-hallway</title>
-    <meta name="title" content="intro | the-hallway">
-    <meta name="description" content="enjoy the hallways">
+    <title>neuron | the-hallway</title>
+    <meta name="title" content="neuron | the-hallway">
+    <meta name="description" content="how neurons work in neural networks">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://the-hallway.jakereynolds.co/">
+    <link rel="canonical" href="https://the-hallway.jakereynolds.co/machine-learning/foundation/neuron/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://the-hallway.jakereynolds.co/">
-    <meta property="og:title" content="intro | the-hallway">
-    <meta property="og:description" content="enjoy the hallways">
-    <meta property="og:image" content="https://imgur.com/wGqSb.gif">
+    <meta property="og:url" content="https://the-hallway.jakereynolds.co/machine-learning/foundation/neuron/">
+    <meta property="og:title" content="neuron | the-hallway">
+    <meta property="og:description" content="how neurons work in neural networks">
+    <meta property="og:image" content="https://the-hallway.jakereynolds.co/machine-learning/foundation/neuron/neuron_model.jpeg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://the-hallway.jakereynolds.co/">
-    <meta property="twitter:title" content="intro | the-hallway">
-    <meta property="twitter:description" content="enjoy the hallways">
-    <meta property="twitter:image" content="https://imgur.com/wGqSb.gif">
+    <meta property="twitter:url" content="https://the-hallway.jakereynolds.co/machine-learning/foundation/neuron/">
+    <meta property="twitter:title" content="neuron | the-hallway">
+    <meta property="twitter:description" content="how neurons work in neural networks">
+    <meta property="twitter:image" content="https://the-hallway.jakereynolds.co/machine-learning/foundation/neuron/neuron_model.jpeg">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=3.5.0.761851822679" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.761851822679" rel="stylesheet">
 
-    <script data-cfasync="false" src="resources/js/config.js?v=3.5.0.761851822679" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.5.0.761851822679" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.761851822679" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.761851822679" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.761851822679" defer></script>
+    <link href="../../../resources/css/katex.css?v=3.5.0" rel="stylesheet">
+    <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.5.0" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -53,7 +56,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-2xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">the-hallway</span>
                         </a>
                     </div>
@@ -167,17 +170,164 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="intro" class="break-words">
+<doc-anchor-target id="neuron" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#intro">#</doc-anchor-trigger>
-        <span>Intro</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#neuron">#</doc-anchor-trigger>
+        <span>Neuron</span>
     </h1>
 </doc-anchor-target>
-<p><figure class="content-center">
-    <img src="https://imgur.com/wGqSb.gif" alt="Glad to see ya">
-    <figcaption class="caption">Glad to see ya</figcaption>
+<p>Neurons are exactly what they sound like, the things in our brain!
+<figure class="content-center">
+    <img src="neuron_model.jpeg" alt="" title="Diagram of a neuron">
+    <figcaption class="caption"></figcaption>
 </figure>
-Thanks for checking out the hallway. You can think of this place as a dumping grounds for everything in my brain. I&#x27;ve learned that while I&#x27;m a great learner, I have terrible retention of knowledge. If I don&#x27;t write something down, it&#x27;s lost to time one way or another. You&#x27;ll find various areas of my brain on the left-hand side.</p>
+</p>
+<p>In machine learning, we model these in neural networks to simulate how the brain works. Neurons take in a series of values (x) and weights (w), which are individually multiplied and then added. The neuron fires by taking these and adding the bias of the neuron (how trigger happy it is) and passing it through an <doc-anchor-trigger to="#activation-functions">activation function</doc-anchor-trigger> which helps squash the values to something like -1 to 1. This is usually <code v-pre>tanh</code> or a <code v-pre>sigmoid</code> function.</p>
+<doc-anchor-target id="weights">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#weights">#</doc-anchor-trigger>
+        <span>Weights</span>
+    </h2>
+</doc-anchor-target>
+<p>The weights for each input of a neuron are arbitrarily chosen. There&#x27;s probably a whole field of mathematics that goes into determining the best starting weights, but at this point for me, it&#x27;s random. Then through the process of training, these weights get adjusted to try and fit our loss function.</p>
+<doc-anchor-target id="logits">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logits">#</doc-anchor-trigger>
+        <span>Logits</span>
+    </h3>
+</doc-anchor-target>
+<p>Usually when starting you&#x27;ll choose random numbers as weights, these numbers can be either positive or negative. Because of this, we&#x27;ll commonly get the exponent of the values by doing <span class="math">e^x</span>. Then all negative numbers will be <span class="math">[0,1]</span> and all positive numbers will be <span class="math">(1,inf]</span>. These are commonly referred to as <a href="https://www.linkedin.com/posts/mwitiderrick_what-are-logits-in-deep-learning-logits-activity-7084819307959902209-UUGe/">Logits</a>.</p>
+<blockquote>
+<p>Logits are the outputs of a neural network before the <doc-anchor-trigger to="#activation-functions">activation function</doc-anchor-trigger> is applied. They are the unnormalized probabilities of the item belonging to a certain class.</p>
+</blockquote>
+<p>In the case of our <a href="../model-types/character-level/#bi-gram-converted-to-a-single-layer-neural-network">bi-gram NN model</a> the logits represent for each input character, the probabilities of each output character in the set.</p>
+<doc-anchor-target id="biases">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#biases">#</doc-anchor-trigger>
+        <span>Biases</span>
+    </h2>
+</doc-anchor-target>
+<p>Much like <doc-anchor-trigger to="#weights">weights</doc-anchor-trigger>, biases are also randomly chosen and updated throughout the training process to try and adjust the activation of that neuron to fit our loss function.</p>
+<doc-anchor-target id="activation-functions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activation-functions">#</doc-anchor-trigger>
+        <span>Activation functions</span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="activation_functions.png" alt="" title="Image showing common activation functions">
+    <figcaption class="caption"></figcaption>
+</figure>
+Activation functions are called on the dot product of the weights and their inputs plus the bias of a neuron. This function helps us control the types of outputs we want to come from our neuron.</p>
+<p>When using activation functions its important to look at how the weights of that neuron affect the activation function. For example if you&#x27;re using <span class="math">tanh</span> which squashes your values to <span class="math">[-1,1]</span> and you have a lot of values <span class="math">&gt;10</span> or <span class="math">&lt;10</span> you&#x27;ll have a lot of values that are <span class="math">-1</span> and <span class="math">1</span> which basically makes the neuron useless. You can <a href="../../frameworks/pytorch/#visualize-activations">visualize this in PyTorch</a> quite nicely as well. Things like <doc-anchor-trigger to="#normalization">normalization</doc-anchor-trigger> and standardization come in handy here.</p>
+<p>Some further reading is available <a href="https://arxiv.org/abs/1502.01852">here</a>.</p>
+<p>The reason we need activation functions (which are also called non-linearities) is because if we only have linear layers, no matter how many we add, the all collapse into a single linear equation. Which means the network is basically useless. We add non-linearities to the network so that each layer adds a form of intelligence when combined with the other layers.</p>
+<doc-anchor-target id="normalization">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#normalization">#</doc-anchor-trigger>
+        <span>Normalization</span>
+    </h3>
+</doc-anchor-target>
+<p>It&#x27;s important to look at how you initialize the values for your neurons. You essentially want them to be gaussian at the beginning so everything has a fair chance of training. If you look at the following, already after one layer, our standard deviation has almost tripled after performing the dot product.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">g = torch.Generator().manual_seed(1)
+x = torch.randn(1000, 10, generator=g)
+w = torch.randn(10, 200, generator=g)
+print(w)
+y = x @ w
+print(x.mean(), x.std())
+# tensor(-0.0038) tensor(1.0057)
+
+print(w.mean(), w.std())
+# tensor(0.0003) tensor(1.0115)
+
+print(y.mean(), y.std())
+# tensor(-0.0064) tensor(3.2211)</code></pre>
+</doc-codeblock></div>
+<p>To fix this, the referenced paper above ended up in the addition of the <a href="https://pytorch.org/docs/stable/nn.init.html">kaiming_normal operation</a>, which divides the weights by the square root of the number of inputs to each neuron. It&#x27;s a bit different depending on exactly which non-linearity you&#x27;re using. For simplicity though you can commonly divide your weights by the square root of the fan-in, or the number of inputs to your neuron.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">g = torch.Generator().manual_seed(1)
+x = torch.randn(1000, 10, generator=g)
+w = torch.randn(10, 200, generator=g) / 10**.5
+print(w)
+y = x @ w
+print(x.mean(), x.std())
+# tensor(-0.0038) tensor(1.0057)
+
+print(w.mean(), w.std())
+# tensor(9.0598e-05) tensor(0.3199)
+
+print(y.mean(), y.std())
+# tensor(-0.0020) tensor(1.0186)</code></pre>
+</doc-codeblock></div>
+<p>Multiplying your weights by this changes the standard deviation because if you look at a layer with standard deviation 1 and multiply it by <code v-pre>.2</code> the standard deviation is now <code v-pre>.2</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">g = torch.Generator().manual_seed(1)
+w = torch.randn(10, 200, generator=g)
+print(w.std())
+# tensor(1.0293)
+
+w = w * .2
+print(w.std())
+# tensor(0.2059)</code></pre>
+</doc-codeblock></div>
+<p>So following that, we can set the standard deviation of a gaussian distribution by multiplying it by whatever our ideal distribution is. The kaiming documentation gives us the equation</p>
+<div class="math"><pre>std = \frac{gain}{\sqrt{fan\_mode}}</pre></div>
+<p>where gain is precalculated by them in the docs. For <span class="math">tanh</span> it is <span class="math">\frac{5}{3}</span>. And <code v-pre>fan_mode</code> is the number of axons of the neuron. Applying this to our function</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">g = torch.Generator().manual_seed(1)
+w = torch.randn(10, 200, generator=g) * ((5/3)/10**.5)
+
+print(w.std())
+# tensor(.3084)</code></pre>
+</doc-codeblock></div>
+<p>So if doing it manually we would want to multiply our initial weights of a neuron with 10 axons by <code v-pre>.3084</code> to have a more normal standard deviation after passing through the activation function. This helps with tanh because it&#x27;s a squashing function, so we want to amplify the values a bit, to fight back against it squashing everything inward. This normalization is typically fixed by applying something like <doc-anchor-trigger to="#batch-normalization">batch normalization</doc-anchor-trigger> to each layer, reducing the important of the initial weights values.</p>
+<doc-anchor-target id="batch-normalization">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#batch-normalization">#</doc-anchor-trigger>
+        <span>Batch normalization</span>
+    </h3>
+</doc-anchor-target>
+<p>A concept published in <a href="https://arxiv.org/abs/1502.03167">this paper</a>, provides a mechanism so that you don&#x27;t have to normalize your weights at initialization but instead normalize them through the training cycle.</p>
+<p>It&#x27;s pretty complex and I don&#x27;t fully understand it, but one critique of it is since it&#x27;s working with the mean and standard deviation of each layer, it&#x27;s coupling all of the inputs during training. So then independent inputs now have a dependency on each other and can affect training. What does that mean? I have no clue.</p>
+<p>Another weird trait is that due to the way you calculate batch normalization, the biases actually ended up being effectively zeroed out. So when doing batch normalization you don&#x27;t use bias in your neurons. It&#x27;s important to remember the bias values wouldn&#x27;t actually be zero, but because you&#x27;re adding a constant value, the subtraction of the mean in the normalization removes any effect that bias would have.</p>
+<p>You apply batch normalization on any layers of your choosing before or after the activation functions have been calculated, it&#x27;s most common to do before though. You generate the normalization with the following</p>
+<div class="math"><pre>z = \frac{x - m}{s}\newline
+output = (z * g) + b\newline
+x = \text{data point}\newline
+m = \text{mean of the data set}\newline
+s = \text{standard deviation}\newline
+g = \text{arbitrary parameter}\newline
+b = \text{arbitrary parameter}</pre></div>
+<doc-anchor-target id="inputs">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#inputs">#</doc-anchor-trigger>
+        <span>Inputs</span>
+    </h3>
+</doc-anchor-target>
+<p>It&#x27;s also common to preform normalization and standardization of your inputs, so that they follow a more equal distribution as well. A good analogy is miles driven, if some users drove 100 miles and others drove 100,000 that creates a significantly large data set that could have large imapcts on the gradients of the neural network. We can normalize them by squashing them down to 0-1 and standardize them by the equation in <doc-anchor-trigger to="#batch-normalization">Batch Normalization</doc-anchor-trigger></p>
+<p>This is discussed in <a href="https://www.youtube.com/watch?v=dXB-KQYkzNU">this video</a>. Normalization and standardization seem to be used somewhat interchangeably.</p>
+<doc-anchor-target id="softmax">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#softmax">#</doc-anchor-trigger>
+        <span>Softmax</span>
+    </h3>
+</doc-anchor-target>
+<p>A <a href="https://en.wikipedia.org/wiki/Softmax_function">softmax activation function</a> is a mathematical expression that will take the outputs from a layer or a neural network and distributed them into probabilities, such that all the outputs sum to equal 1. This is an easy way to add probability distribution to the output of your net.</p>
+<doc-anchor-target id="random-math">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#random-math">#</doc-anchor-trigger>
+        <span>Random math</span>
+    </h3>
+</doc-anchor-target>
+<p>It can be useful to plot the values of your activation functions and gradients. You ideally want to see a gaussian distribution when doing so because that means your network doesn&#x27;t have a ton of dead neurons.</p>
+<doc-anchor-target id="layers">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#layers">#</doc-anchor-trigger>
+        <span>Layers</span>
+    </h2>
+</doc-anchor-target>
+<p>Idk where to put this, but an interesting pattern was covered, which is during training each layer is commonly composed of 3 parts. A convolutional/weight part, a normalization part, and a non-linearity part.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -187,13 +337,20 @@ Thanks for checking out the hallway. You can think of this place as a dumping gr
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../machine-learning/foundation/multi-layer-perceptron/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">multi-​layer perceptron</span>
+                                            </span>
+                                        </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="start-ups/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../machine-learning/frameworks/pytorch/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">start ups</span>
+                                                <span class="block mt-1">pytorch</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -237,6 +394,6 @@ Thanks for checking out the hallway. You can think of this place as a dumping gr
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "intro", isRoot: true, level: 0, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "neuron", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
 </body>
 </html>

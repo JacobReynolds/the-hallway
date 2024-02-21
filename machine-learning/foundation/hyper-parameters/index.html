@@ -11,32 +11,37 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>ai x-prize | the-hallway</title>
-    <meta name="title" content="ai x-prize | the-hallway">
-    <meta name="description" content="ai-driven...everything?">
+    <title>hyper parameters | the-hallway</title>
+    <meta name="title" content="hyper parameters | the-hallway">
+    <meta name="description" content="knobs to help you tune your neural network">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://the-hallway.jakereynolds.co/ai-x-prize/">
+    <link rel="canonical" href="https://the-hallway.jakereynolds.co/machine-learning/foundation/hyper-parameters/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://the-hallway.jakereynolds.co/ai-x-prize/">
-    <meta property="og:title" content="ai x-prize | the-hallway">
-    <meta property="og:description" content="ai-driven...everything?">
+    <meta property="og:url" content="https://the-hallway.jakereynolds.co/machine-learning/foundation/hyper-parameters/">
+    <meta property="og:title" content="hyper parameters | the-hallway">
+    <meta property="og:description" content="knobs to help you tune your neural network">
+    <meta property="og:image" content="https://the-hallway.jakereynolds.co/machine-learning/foundation/hyper-parameters/learning-rate-decay.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://the-hallway.jakereynolds.co/ai-x-prize/">
-    <meta property="twitter:title" content="ai x-prize | the-hallway">
-    <meta property="twitter:description" content="ai-driven...everything?">
+    <meta property="twitter:url" content="https://the-hallway.jakereynolds.co/machine-learning/foundation/hyper-parameters/">
+    <meta property="twitter:title" content="hyper parameters | the-hallway">
+    <meta property="twitter:description" content="knobs to help you tune your neural network">
+    <meta property="twitter:image" content="https://the-hallway.jakereynolds.co/machine-learning/foundation/hyper-parameters/learning-rate-decay.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.5.0.761851822679" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.761851822679" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.761851822679" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.761851822679" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.761851822679" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.761851822679" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.761851822679" defer></script>
+    <link href="../../../resources/css/katex.css?v=3.5.0" rel="stylesheet">
+    <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.5.0" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -51,7 +56,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-2xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">the-hallway</span>
                         </a>
                     </div>
@@ -165,59 +170,49 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="-ai-x-prize-wip" class="break-words">
+<doc-anchor-target id="hyper-parameters" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-ai-x-prize-wip">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F916;</span> AI X-Prize (WIP)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hyper-parameters">#</doc-anchor-trigger>
+        <span>Hyper parameters</span>
     </h1>
 </doc-anchor-target>
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I’ve been thinking we need an X-Prize style competition for indie builders aiming to hit $100M in revenue with less than 10 employees 🤔<br><br>Feels timely and… doable. <a href="https://t.co/PzzZyTj05h">https://t.co/PzzZyTj05h</a></p>&mdash; Bryce Roberts (@bryce) <a href="https://twitter.com/bryce/status/1753173575157334275?ref_src=twsrc%5Etfw">February 1, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<p>This tweet by <a href="https://x.com/bryce">@bryce</a> (what a flex of a twitter handle) is pretty interesting to me. Far more attainable than Sam Altman&#x27;s referenced video discussing a $1B single-person company and something that could come with a lot of exciting challenges to solve.</p>
-<doc-anchor-target id="what-it-takes">
+<p>Hyper parameters are the variables in your network that you get to control. Things like the embedding space of the inputs, the number of layers, the number of neurons in each layer, etc...</p>
+<doc-anchor-target id="learning-rate-decay">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-it-takes">#</doc-anchor-trigger>
-        <span>What it takes</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#learning-rate-decay">#</doc-anchor-trigger>
+        <span>Learning rate decay</span>
     </h2>
 </doc-anchor-target>
-<p>What does it actually take to grow a business to $100M in revenue? Notice I said <em>revenue</em> not <em>valuation</em>. Going down this path you have two major considerations, B2B or B2C. And if you&#x27;re like me, you&#x27;re thinking you want to do whichever one is easiest. My experience is exclusively in B2B SaaS and while B2C likely would be the easier route (if you know what you&#x27;re doing) I have nothing of value to provide there. Why would B2C be easier? Mainly because your primary human-driven interaction with your users would be support, which already has a large amount of ai-driven providers. When you get into B2B, especially enterprise B2B, it&#x27;s all about human interactions, relationships, and sales. And since our goal is to minimize the humans on our team, that presents a challenge. Given that I&#x27;m a hermit and enjoy programming alone in a room, trying to find ways to automate the human out of the equation is enticing enough to look into.</p>
-<doc-anchor-target id="b2b-challenges">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#b2b-challenges">#</doc-anchor-trigger>
-        <span>B2B challenges</span>
-    </h2>
-</doc-anchor-target>
-<p>So you want to start a $100M B2B business? Let&#x27;s take you through that journey and see what problems you&#x27;ll encounter during it. Remember, our goal here is to keep full-time headcount under 10 people. I might cheat and use some agencies here and there, consider it an any% glitched speedrun.</p>
-<doc-anchor-target id="first-million">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#first-million">#</doc-anchor-trigger>
-        <span>First million</span>
-    </h3>
-</doc-anchor-target>
-<p>This is, funnily enough, likely to be the easiest part. At least as far as the AI stuff goes. Thousands of businesses have scaled to $1M in revenue with less than 10 people. In the enterprise B2B space, assume your ACV is $50k, that&#x27;s only 20 customers. Let&#x27;s also assume you close 10% of deals that make it to the first meeting, that&#x27;s 200 meetings. Which is definitely doable for a founder-led sales process.</p>
-<p>What AI is needed at this point? Really none, but it&#x27;d be good to set some groundwork. Let&#x27;s go ahead and get that set up.</p>
-<ul class="contains-task-list">
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Customer support fully automated</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Any developers we have are using a co-pilot</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Email is primarily driven by AI using something like <a href="https://superhuman.com/">Superhuman</a></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> All scheduling is done via a scheduler like <a href="https://cal.com">cal.com</a></li>
-</ul>
-<p>What does our team look like so far?</p>
-<ul class="contains-task-list">
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Founder</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Founding engineer (x2)</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Head of AI Operations
-<ul>
-<li>This is a very important role. Almost like a COO, but for AI within your company. They should be ruthlessly focused on removing process and replacing it with AI.</li>
-</ul>
-</li>
-</ul>
-<doc-anchor-target id="non-artificial-intelligence">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#non-artificial-intelligence">#</doc-anchor-trigger>
-        <span>Non-artificial Intelligence</span>
-    </h2>
-</doc-anchor-target>
-<p>Now you might be saying, &quot;scheduling apps don&#x27;t use AI&#x27;. And you&#x27;d be mostly right. This is an important distinction in this journey. The benefit of AI is offloading things humans can do (or can&#x27;t do) and having a computer do it for them. When it comes to scheduling, how can I offload my management of it? Since there&#x27;s likely a human person on the other end of scheduling this meeting, why not just make <em>them</em> my AI?! The more I can provide a machine-driven interface into interactions with me and my team, the less we have to manage the fluff.</p>
+<p>One of these parameters is the learning rate, which is how much you multiply the gradient by on each pass to tune the weights to the loss function. An easy way to decide on this rate is to exponentially increase the learning rate, visualize it, and identify where it starts to blow up. The below shows us that <span class="math">10^{-1}</span> seems to be our best fit.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import torch
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+lre = torch.linspace(-3, 0, 1000) # Generates 1000 steps between -3 and 0
+lrs = 10**lre # Exponentiates the steps to go from 10^-3 to 10^0
+lri = []
+lossi = []
+
+for i in range(1000):
+    # Forward pass
+    # Backwards pass
+    lr = lri[i]
+    p.data += -lr * p.grad
+
+    loss = 1.0 # Calculate loss
+
+    lri.append(lr)
+    lossi.append(loss)
+
+plt.plot(lri, lossi)
+</code></pre>
+</doc-codeblock></div>
+<p><figure class="content-center">
+    <img src="learning-rate-decay.png" alt="" title="Line graph showing learning rate decay">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -225,6 +220,27 @@
                             </div>
                             <footer class="clear-both">
                             
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../machine-learning/foundation/gradient-descent/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">gradient descent</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../machine-learning/foundation/loss/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">loss</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
                             </footer>
                         </main>
                 
@@ -263,6 +279,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "ai x-prize", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "hyper parameters", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
 </body>
 </html>
