@@ -11,8 +11,7 @@ footer:
   copyright: "&copy; Copyright {{ year }}. All rights reserved."
 
 meta:
-  title: the-hallway
-  description: enjoy the hallways
+  title: " | the-hallway"
 
 integrations:
   plausible:
