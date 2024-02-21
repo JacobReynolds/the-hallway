@@ -141,7 +141,7 @@ The hardest thing for me to grasp in this is the embedding space. In the followi
 
 When we increase the embedding space, we're essentially giving the neural network more dimensions to tune to gauge similarity between the input characters. So it can relate them amongst a variety of commonalities.
 
-==- Code example
+==- By-hand code example
 
 ```python
 import torch
@@ -250,6 +250,156 @@ for _ in range(10):
             break
         out.append(itos[ix])
     print(''.join(out))
+```
+
+===
+
+==- Pytorch code example
+
+```python
+import torch
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+torch.manual_seed(101)
+
+words = open('names.txt', 'r').read().splitlines()
+[training_set, validation_set, test_set] = torch.utils.data.random_split(words, [.8 ,.1 ,.1])
+
+TOKEN='.'
+chars = list(set(''.join(words)+TOKEN))
+chars.sort()
+itos = dict([(i,s) for i, s in enumerate(chars)])
+stoi = dict([s, i] for i, s in enumerate(chars))
+vocab_size = len(chars)
+block_size = 8
+
+def build_dataset(words):
+    xs = []
+    ys = []
+    for word in words:
+        context = [0]*block_size
+        for i, ch in enumerate(word+TOKEN):
+            ix = stoi[ch]
+            xs.append(context)
+            ys.append(ix)
+
+            # print(f"{''.join(itos[i] for i in context)} -> " + ch)
+            context = context[1:]+[ix]
+    return torch.tensor(xs), torch.tensor(ys)
+
+Xtr, Ytr = build_dataset(training_set)
+Xval, Yval = build_dataset(validation_set)
+Xtest, YTest = build_dataset(test_set)
+
+n_embd = 10
+n_hidden = 200
+
+C = torch.randn((vocab_size, n_embd))
+model = torch.nn.Sequential(
+    torch.nn.Linear(n_embd * block_size, n_hidden, bias=False), torch.nn.BatchNorm1d(n_hidden), torch.nn.Tanh(),
+    torch.nn.Linear(n_hidden, n_hidden, bias=False), torch.nn.BatchNorm1d(n_hidden), torch.nn.Tanh(),
+    torch.nn.Linear(n_hidden, n_hidden, bias=False), torch.nn.BatchNorm1d(n_hidden), torch.nn.Tanh(),
+    torch.nn.Linear(n_hidden, n_hidden, bias=False), torch.nn.BatchNorm1d(n_hidden), torch.nn.Tanh(),
+    torch.nn.Linear(n_hidden, n_hidden, bias=False), torch.nn.BatchNorm1d(n_hidden), torch.nn.Tanh(),
+    torch.nn.Linear(n_hidden, n_hidden, bias=False), torch.nn.BatchNorm1d(n_hidden), torch.nn.Tanh(),
+    torch.nn.Linear(n_hidden, vocab_size)
+)
+
+with torch.no_grad():
+    model[-1].weight *= 0.1
+
+print(sum(p.nelement() for p in model.parameters()))
+# 224097
+
+parameters = model.parameters()
+for p in parameters:
+  p.requires_grad = True
+
+max_steps = 50000
+batch_size = 32
+for i in range(max_steps):
+    ix = torch.randint(0, Xtr.shape[0], (batch_size, ))
+    Xb, Yb = Xtr[ix], Ytr[ix]
+    # forward pass
+    emb = C[Xb]
+    x = emb.view(emb.shape[0], -1)
+    x = model(x)
+    loss = torch.nn.functional.cross_entropy(x, Yb)
+
+    for p in model.parameters():
+        p.grad = None
+    loss.backward()
+
+    lr = 0.1 if i<(max_steps*.75) else .01
+    for p in model.parameters():
+        p.data += -lr * p.grad
+
+    if i%(max_steps/10) == 0:
+        print(f"{i:7d}/{max_steps:7d}: loss={loss.item(): .4f}")
+
+#       0/  50000: loss= 3.2879
+#    5000/  50000: loss= 2.2665
+#   10000/  50000: loss= 1.8019
+#   15000/  50000: loss= 2.3069
+#   20000/  50000: loss= 1.9199
+#   25000/  50000: loss= 2.1590
+#   30000/  50000: loss= 1.8411
+#   35000/  50000: loss= 2.1169
+#   40000/  50000: loss= 1.9671
+#   45000/  50000: loss= 1.7272
+
+# Enable evaluation mode
+model.eval()
+
+# evaluate the loss
+@torch.no_grad() # this decorator disables gradient tracking inside pytorch
+def split_loss(split):
+  x,y = {
+    'train': (Xtr, Ytr),
+    'val': (Xval, Yval),
+    'test': (Xtest, Ytest),
+  }[split]
+  emb = C[x]
+  logits = model(emb.view(emb.shape[0], -1))
+  loss = torch.nn.functional.cross_entropy(logits, y)
+  print(split, loss.item())
+
+split_loss('train')
+split_loss('val')
+split_loss('test')
+
+# train 1.9532647132873535
+# val 2.0290515422821045
+# test 2.030517816543579
+
+num_examples = 10
+for _ in range(num_examples):
+    CONTEXT = [0] * block_size
+    out = []
+    while True:
+        emb = C[CONTEXT]
+        h = emb.view(1, -1)
+        x = model(h)
+
+        probs = torch.softmax(x, 1)
+        ix = torch.multinomial(probs, num_samples=1, replacement=True).item()
+        if ix == 0:
+            break
+        CONTEXT = CONTEXT[1:] + [ix]
+        out.append(ix)
+    print(''.join([itos[c] for c in out]))
+
+# reemaria
+# angeliel
+# nyta
+# torniss
+# kaalyn
+# celina
+# sadari
+# malayna
+# gerykus
+# aarisha
 ```
 
 ===

@@ -90,6 +90,8 @@ g = \text{arbitrary parameter}\newline
 b = \text{arbitrary parameter}
 $$
 
+Another important fact is that since you are using this hidden layer of normalization, with its own weights and bias, you need to use those weights and biases when running inference passes on your network. Pytorch calculates a rolling average of these so that you can access them after training, and apply them where appropriate in your forward passes.
+
 ### Inputs
 
 It's also common to preform normalization and standardization of your inputs, so that they follow a more equal distribution as well. A good analogy is miles driven, if some users drove 100 miles and others drove 100,000 that creates a significantly large data set that could have large imapcts on the gradients of the neural network. We can normalize them by squashing them down to 0-1 and standardize them by the equation in [Batch Normalization](#batch-normalization)
