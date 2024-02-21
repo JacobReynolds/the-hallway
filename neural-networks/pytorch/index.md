@@ -1,5 +1,6 @@
 ---
 title: pytorch
+icon: flame
 description: like the olympic torch, but nerdier
 ---
 

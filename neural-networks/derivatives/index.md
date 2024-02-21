@@ -1,5 +1,6 @@
 ---
 title: derivatives
+icon: beaker
 description: take me back to calc 1
 ---
 

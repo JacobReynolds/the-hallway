@@ -1,5 +1,6 @@
 ---
 title: back propagation
+icon: arrow-left
 description: calculating gradients across your neural network
 ---
 

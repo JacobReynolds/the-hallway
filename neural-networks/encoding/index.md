@@ -1,5 +1,6 @@
 ---
 title: encoding
+icon: number
 description: handling features for a model
 ---
 

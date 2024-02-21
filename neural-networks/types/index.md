@@ -1,5 +1,6 @@
 ---
 title: types
+icon: list-ordered
 description: different types of neural networks
 ---
 

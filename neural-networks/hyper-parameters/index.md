@@ -1,5 +1,6 @@
 ---
 title: hyper parameters
+icon: dependabot
 description: knobs to help you tune your neural network
 ---
 

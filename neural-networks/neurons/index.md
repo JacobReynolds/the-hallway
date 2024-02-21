@@ -1,5 +1,6 @@
 ---
 title: neurons
+icon: north-star
 description: how neurons work in neural networks
 ---
 

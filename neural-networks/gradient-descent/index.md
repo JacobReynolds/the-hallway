@@ -1,5 +1,6 @@
 ---
 title: gradient descent
+icon: pulse
 description: fine tuning a neural network
 ---
 

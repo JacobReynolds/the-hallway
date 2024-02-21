@@ -1,5 +1,6 @@
 ---
 title: loss
+icon: diff-removed
 description: calculations to help you tune your neural network
 ---
 
