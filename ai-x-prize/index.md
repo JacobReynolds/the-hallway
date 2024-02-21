@@ -1,6 +1,5 @@
 ---
 title: ai x-prize
-layout: default
 description: ai-driven...everything?
 visibility: hidden
 order: -11
