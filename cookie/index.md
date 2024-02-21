@@ -19,7 +19,6 @@ Issues aside, it's an emerging technology that has been adopted by huge provider
 
 ==- Apple's PAT issuer requirements
 ![](./apple.png)
-
 ===
 
 And Google simply requires you to open an issue on their [Github repo](https://github.com/GoogleChrome/private-tokens).
