@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761791067222">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761791499179">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -34,12 +34,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.761791067222" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.761791499179" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.761791067222" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.761791499179" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.761791067222" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.761791067222" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.761791499179" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.761791499179" defer></script>
     <link href="../../../resources/css/katex.css?v=3.5.0" rel="stylesheet">
     <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.5.0" defer></script>
 </head>
@@ -207,8 +207,8 @@ h = 0.0000001
 <p>Which if we take the derivative of <span class="math">f(x)</span> where <span class="math">x = 3</span> we get <span class="math">f'(x) = 6x - 4 = 6*3 - 4 = 14</span> which matches our equations.</p>
 <p>This is important, because as we start making complex chains of nodes (a neural net), we want to know the derivative of the output wrt the individual nodes. That way we can tell how we have to change that node to manipulate the output of the function.</p>
 <p><figure class="content-center">
-    <img src="derivatives_nodes.png" alt="Screenshot showing gradient nodes">
-    <figcaption class="caption">Screenshot showing gradient nodes</figcaption>
+    <img src="derivatives_nodes.png" alt="" title="Screenshot showing gradient nodes">
+    <figcaption class="caption"></figcaption>
 </figure>
 </p>
 <p>This is a good example, where we would want to know the derivative of L wrt c, so we know how to change c to impact L.</p>
@@ -243,16 +243,16 @@ h = 0.0000001
 </doc-anchor-target>
 <p>More simply, as we navigate through back propagation, we will want to identify how one node affects the loss function. But this node could be one of many.</p>
 <p><figure class="content-center">
-    <img src="chain_rule_grad.png" alt="Screenshot showing nodes">
-    <figcaption class="caption">Screenshot showing nodes</figcaption>
+    <img src="chain_rule_grad.png" alt="" title="Screenshot showing nodes">
+    <figcaption class="caption"></figcaption>
 </figure>
 </p>
 <p>Using the above example, the local derivative of <span class="math">c \space w.r.t \space d</span> is 1, because it’s <doc-anchor-trigger to="#addition">addition</doc-anchor-trigger>. But how does <span class="math">c</span> affect <span class="math">L</span>? The <a href="https://en.wikipedia.org/wiki/Chain_rule">Chain Rule</a> gives us this. And what it says is, using the above variable names</p>
 <div class="math"><pre>\frac{dL}{dc} = \frac{dL}{dd} \cdot \frac{dd}{dc}</pre></div>
 <p>Which in this case is <span class="math">-2 \cdot 1 = -2</span>. Why is <span class="math">\frac{dd}{dc}=1</span>? See <doc-anchor-trigger to="#addition">addition</doc-anchor-trigger>. It&#x27;s even nicer because as we get further along the back propagation we only need to multiply the local derivative by the gradient of the grandparent node. Take the following:
 <figure class="content-center">
-    <img src="chain_rule_ext.png" alt="Larger screenshot showing nodes">
-    <figcaption class="caption">Larger screenshot showing nodes</figcaption>
+    <img src="chain_rule_ext.png" alt="" title="Larger screenshot showing nodes">
+    <figcaption class="caption"></figcaption>
 </figure>
 If we want to do <span class="math">\frac{dL}{da}</span> we would only need to do <span class="math">\frac{de}{da} \cdot \frac{dd}{de}</span>, since it&#x27;s all multiplication we don&#x27;t have to chain it all the way back to L.</p>
 <p>Another cool thing here is that since the back propagation only relies on multiplying the local derivative with the grandparent derivative, the calculation can be arbitrarily complex. It doesn&#x27;t have to be <span class="math">+</span> or <span class="math">*</span> between nodes, it can be anything as long as we can derive it. This is helpful when doing back propagation on a <a href="../neuron/">neuron</a> that has an activation function, so we can derive the value inclusive of the activation function.</p>
@@ -264,8 +264,8 @@ If we want to do <span class="math">\frac{dL}{da}</span> we would only need to d
 </doc-anchor-target>
 <p>Doing the derivative of an additive operation w.r.t. a node is pretty easy. It equals 1. Why is that true? Take these nodes for example
 <figure class="content-center">
-    <img src="chain_rule_grad.png" alt="Screenshot showing nodes">
-    <figcaption class="caption">Screenshot showing nodes</figcaption>
+    <img src="chain_rule_grad.png" alt="" title="Screenshot showing nodes">
+    <figcaption class="caption"></figcaption>
 </figure>
 </p>
 <div class="math"><pre>d = c + e</pre></div>

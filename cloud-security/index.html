@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761791067222">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761791499179">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -34,11 +34,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.5.0.761791067222" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.5.0.761791499179" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.761791067222" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.761791499179" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.761791067222" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.761791499179" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -206,15 +206,18 @@
     </h2>
 </doc-anchor-target>
 <p>One of the things that I have going for me is I use to be a hacker (I&#x27;d argue I still am, but would never win a CTF at this point). I want to find users of Render and Supabase and ask them about their cybersecurity needs. In cybersecurity, we call this Open Source Intelligence (OSINT) and luckily for me, man is there a lot of it for this use case. For someone to use Render or Supabase they have to update their DNS records and point their domains to ones owned by the cloud provider. I could go around scraping and abusing DNS all around the world, or I could just use our friends over at <a href="https://host.io">host.io</a>. You can look up a domain name or <a href="https://www.cloudflare.com/learning/network-layer/what-is-an-autonomous-system/">Autonomous System Number</a> (ASN) and see all domain names that point to it.</p>
-<video width="100%" alt="Video showing a user accessing host.io" controls>
-  <source src="./RenderNameLookup.mp4" type="video/mp4">
-Your browser does not support videos.
-</video>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <embed class="w-full h-full border-0 absolute inset-0" src="rendernamelookup.mp4"></embed>
+    </div>
+</figure>
+</p>
 <p>After buying $500 worth of API tokens, I was able to start pulling all of these domain names down and prioritize who to reach out to. There were 27k domains, so how can I identify legitimate companies and not small blogging websites? In an ideal world, I&#x27;d use <a href="https://zoominfo.com">zoominfo</a> but they don&#x27;t really service companies of my size. Luckily for me, <a href="https://hubspot.com">Hubspot</a> exists. I was able to sign up for their Starter Suite for only $240/year and get access to a pretty sweet set of tools. From there I imported all the domain names and hubspot automatically correlated the domain names to businesses, providing me their sector, revenue, employee count, and more. Unfortunately a lot of this data was pretty hit and miss, it would end up correlating small businesses on the platform to major providers. I doubt your local community center is doing $1,000,000,000 in revenue. I spent a good few days parsing through this data in a variety of ways.</p>
 <p>After finding an eligible business, I would look it up on <a href="https://business.linkedin.com/sales-solutions/sales-navigator">LinkedIn Sales Navigator</a> and reach out to the most senior technical leadership or founder with a message along the lines of:</p>
 <p><figure class="content-center">
-    <img src="linkedinoutreach.png" alt="Linkedin message asking for advisors">
-    <figcaption class="caption">Linkedin message asking for advisors</figcaption>
+    <img src="linkedinoutreach.png" alt="" title="Linkedin message asking for advisors">
+    <figcaption class="caption"></figcaption>
 </figure>
 </p>
 <p>Sales is a funky thing for me and I imagine most technical people. It can come off as pretty ingenuine and scammy. In most cases, it usually is, so that&#x27;s a fair thought. Like most things though, I think if you&#x27;re a good person, working with good people, everyone benefits. To me it felt weird sending hundreds of LI connections asking for advisors, but I routinely found that when I got on a call with someone they were kind and gracious and happy to help. I&#x27;m immensely grateful to the people that have taken me up on these offers in their various forms.</p>
@@ -233,11 +236,12 @@ Your browser does not support videos.
     </h2>
 </doc-anchor-target>
 <p>I realized I shot pretty far downstream from AWS to Supabase, so I look at who might be in the middle. It turns out there&#x27;s a pretty mature middle market for cloud providers, comprised mainly of companies like <a href="https://us.ovhcloud.com/">OVHCloud</a>, <a href="https://www.vultr.com/">Vultr</a>, and <a href="https://www.hetzner.com/">Hetzner</a>. Wash, rinse, and repeat. I went to host.io (finally putting that $500 to work) and started pulling customers for these providers. Immediately, I&#x27;m motivated by seeing how much larger their client base is from the previous providers.</p>
-<figure class="small">
-<img src="./OVHCloud.png" alt="OVH Cloud has 7 million+ domains pointing to them"/>
-<figcaption>7 million OVHCloud domains</figcaption>
+<p><figure class="content-center">
+    <img src="ovhcloud.png" alt="OVH Cloud has 7 million+ domains pointing to them" title="7 million OVHCloud domains">
+    <figcaption class="caption">OVH Cloud has 7 million+ domains pointing to them</figcaption>
 </figure>
-And that was another week, scraping, triaging the information, reaching out on LinkedIn, and talking with customers of those platforms. Again, I was surprised that even at this level, aside from some whales, there didn't seem to be a large client base that would be spending enterprise dollars on security. I found a lot of wordpress hosting providers, game server hosting companies, the odd tech company, but no one I met with said that security was in their budget. I'm sure the people are out there, but I couldn't find them. Even now I'm doubting myself and thinking I should go back and keep trying to find those companies, but moving fast is important and I felt this was a big enough barrier to warrant moving on.
+</p>
+<p>And that was another week, scraping, triaging the information, reaching out on LinkedIn, and talking with customers of those platforms. Again, I was surprised that even at this level, aside from some whales, there didn&#x27;t seem to be a large client base that would be spending enterprise dollars on security. I found a lot of wordpress hosting providers, game server hosting companies, the odd tech company, but no one I met with said that security was in their budget. I&#x27;m sure the people are out there, but I couldn&#x27;t find them. Even now I&#x27;m doubting myself and thinking I should go back and keep trying to find those companies, but moving fast is important and I felt this was a big enough barrier to warrant moving on.</p>
 <doc-anchor-target id="thanks-for-the-fish">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#thanks-for-the-fish">#</doc-anchor-trigger>

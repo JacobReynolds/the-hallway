@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761791067222">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761791499179">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -34,12 +34,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=3.5.0.761791067222" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.5.0.761791499179" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.5.0.761791067222" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.5.0.761791499179" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.5.0.761791067222" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.5.0.761791067222" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.5.0.761791499179" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.5.0.761791499179" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -237,8 +237,8 @@ for _ in range(10):
 # teda.</code></pre>
 </doc-codeblock></div>
 <p><figure class="content-center">
-    <img src="bigram.png" alt="Bigram screenshot">
-    <figcaption class="caption">Bigram screenshot</figcaption>
+    <img src="bigram.png" alt="" title="Bigram screenshot">
+    <figcaption class="caption"></figcaption>
 </figure>
 </p>
 <p>We generate statistics for each character pairing, then sample from those statistics to create terrible names.</p>
@@ -324,8 +324,8 @@ for _ in range(200):
 </doc-anchor-target>
 <p>The hardest thing for me to grasp in this is the embedding space. In the following code, you&#x27;ll see we have a hyper parameter called <code v-pre>EMBEDDING_SPACE</code> which is 2. This means that for every character <code v-pre>a-z.</code> in our input, that character lives in 2d space and can be plotted with an x,y axis. When visualizing this, the groupings of these characters represent how closely the neural network thinks they&#x27;re related.</p>
 <p><figure class="content-center">
-    <img src="embeddings.png" alt="2d visualization of the embeddings">
-    <figcaption class="caption">2d visualization of the embeddings</figcaption>
+    <img src="embeddings.png" alt="" title="2d visualization of the embeddings">
+    <figcaption class="caption"></figcaption>
 </figure>
 </p>
 <p>When we increase the embedding space, we&#x27;re essentially giving the neural network more dimensions to tune to gauge similarity between the input characters. So it can relate them amongst a variety of commonalities.</p>

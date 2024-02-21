@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761791067222">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761791499179">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -34,12 +34,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.761791067222" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.761791499179" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.761791067222" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.761791499179" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.761791067222" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.761791067222" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.761791499179" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.761791499179" defer></script>
     <link href="../../../resources/css/katex.css?v=3.5.0" rel="stylesheet">
     <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.5.0" defer></script>
 </head>
@@ -191,8 +191,8 @@
 <p>You calculate this by subtracting the actual output of the neural network from the expected output, squaring them, and then taking the mean of all values you tested. I <em>think</em> this helps exaggerate values that are far from correct and shrink values that are closer to correct. But it also has the primary benefit of getting rid of the sign of the values, similar to <span class="math">abs</span>.</p>
 <p>The curious thing to me is that we don&#x27;t actually take the mean of the summated squared losses, at least not in anything I&#x27;ve seen so far. So I&#x27;m hoping to figure that out. It seems like the division by <span class="math">N</span> doesn&#x27;t really matter, it&#x27;s the squaring of the loss values that actually give us our metrics. Everything else is just syntactic sugar. This is a popular method when performing regression.</p>
 <p><figure class="content-center">
-    <img src="mean-squared-loss.png" alt="Mathematical expression of mean squared loss">
-    <figcaption class="caption">Mathematical expression of mean squared loss</figcaption>
+    <img src="mean-squared-loss.png" alt="" title="Mathematical expression of mean squared loss">
+    <figcaption class="caption"></figcaption>
 </figure>
 </p>
 <doc-anchor-target id="example">

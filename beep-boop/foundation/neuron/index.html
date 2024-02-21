@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761791067222">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761791499179">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -34,12 +34,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.761791067222" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.761791499179" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.761791067222" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.761791499179" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.761791067222" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.761791067222" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.761791499179" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.761791499179" defer></script>
     <link href="../../../resources/css/katex.css?v=3.5.0" rel="stylesheet">
     <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.5.0" defer></script>
 </head>
@@ -178,8 +178,8 @@
 </doc-anchor-target>
 <p>Neurons are exactly what they sound like, the things in our brain!
 <figure class="content-center">
-    <img src="neuron_model.jpeg" alt="Diagram of a neuron">
-    <figcaption class="caption">Diagram of a neuron</figcaption>
+    <img src="neuron_model.jpeg" alt="" title="Diagram of a neuron">
+    <figcaption class="caption"></figcaption>
 </figure>
 </p>
 <p>In machine learning, we model these in neural networks to simulate how the brain works. Neurons take in a series of values (x) and weights (w), which are individually multiplied and then added. The neuron fires by taking these and adding the bias of the neuron (how trigger happy it is) and passing it through an <doc-anchor-trigger to="#activation-functions">activation function</doc-anchor-trigger> which helps squash the values to something like -1 to 1. This is usually <code v-pre>tanh</code> or a <code v-pre>sigmoid</code> function.</p>
@@ -215,8 +215,8 @@
     </h2>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="activation_functions.png" alt="Image showing common activation functions">
-    <figcaption class="caption">Image showing common activation functions</figcaption>
+    <img src="activation_functions.png" alt="" title="Image showing common activation functions">
+    <figcaption class="caption"></figcaption>
 </figure>
 Activation functions are called on the dot product of the weights and their inputs plus the bias of a neuron. This function helps us control the types of outputs we want to come from our neuron.</p>
 <p>When using activation functions its important to look at how the weights of that neuron affect the activation function. For example if you&#x27;re using <span class="math">tanh</span> which squashes your values to <span class="math">[-1,1]</span> and you have a lot of values <span class="math">&gt;10</span> or <span class="math">&lt;10</span> you&#x27;ll have a lot of values that are <span class="math">-1</span> and <span class="math">1</span> which basically makes the neuron useless. You can <a href="../../frameworks/pytorch/#visualize-activations">visualize this in PyTorch</a> quite nicely as well.</p>
