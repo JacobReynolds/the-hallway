@@ -299,3 +299,25 @@ plt.imshow(a.abs()>.99, cmap='gray', interpolation='nearest')
 ![](./activation-function.png "Visualizing an activation function")
 
 ===
+
+## Dimensions
+
+Working with and manipulating dimensions gets pretty confusing for me. Especially since pytorch is considered a [row-major framework](https://discuss.pytorch.org/t/are-tensors-column-major-or-row-major/832). That makes me think that the 0th dimension is the row, but if I take an mean of the 0th dimension wtf does that mean? Taking the mean of a dimension essentially collapses that dimension. So you can think of it taking the 0th dimension (row) and collapsing it as much as possible. Meaning your output will be a single row, with the values from each row being averaged into each column value.
+
+==- Code example
+
+```python
+test = torch.tensor([
+    [1,0,0,0,0],
+    [2,0,0,0,0],
+    [3,0,0,0,0],
+], dtype=torch.float)
+
+print(test.mean(dim=0))
+# tensor([2., 0., 0., 0., 0.])
+
+print(test.mean(dim=1))
+# tensor([0.2000, 0.4000, 0.6000])
+```
+
+===

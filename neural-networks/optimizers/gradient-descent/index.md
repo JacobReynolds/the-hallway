@@ -1,18 +1,18 @@
 ---
 title: gradient descent
-icon: pulse
 description: fine tuning a neural network
+order: 1000
 ---
 
 # Gradient Descent
 
-Gradient descent is the process of fine tuning the weights and biases of [neurons](../neuron) in a neural network to minimize our [loss function](../loss/).
+Gradient descent is the process of fine tuning the weights and biases of [neurons](../../neurons) in a neural network to minimize our [loss function](../../loss/).
 
 ## Example
 
-We do this by performing [back propagation](../back-propagation/) across something like a [multi-layer perceptron](../multi-layer-perceptron/) to [calculate](../derivatives/) the gradients of each [neuron](../neuron/). We do this so when we do a forward-pass through the MLP, we can compare the expected outputs against the actual outputs using a [loss function](../loss/). Gradient descent is then the process of adjusting the weights and biases of each neuron, to get our loss function as low as possible. The gradient of each neuron helps us understand whether to change the weights/biases of that neuron in a positive or negative direction to achieve the output we want.
+We do this by performing [back propagation](../../back-propagation/) across something like a [multi-layer perceptron](../../types/multi-layer-perceptron/) to [calculate](../../derivatives/) the gradients of each [neuron](../../neurons/). We do this so when we do a forward-pass through the MLP, we can compare the expected outputs against the actual outputs using a [loss function](../../loss/). Gradient descent is then the process of adjusting the weights and biases of each neuron, to get our loss function as low as possible. The gradient of each neuron helps us understand whether to change the weights/biases of that neuron in a positive or negative direction to achieve the output we want.
 
-Building off the [multi-layer perceptron](../multi-layer-perceptron/) implementation, we can perform gradient descent with the following:
+Building off the [multi-layer perceptron](../../types/multi-layer-perceptron/) implementation, we can perform gradient descent with the following:
 
 ==- Code example
 
@@ -90,4 +90,4 @@ As the number of iterations increases, it's common to use a strategy called "Lea
 
 ## At scale
 
-When performing gradient descent at scale, it's common to only analyze a small subset of the total neurons to save on computation time. This means you'll choose a batch of neurons/layers, perform a forward pass on them, calculate the [loss function](../loss) on that batch, and update gradients within that batch accordingly.
+When performing gradient descent at scale, it's common to only analyze a small subset of the total neurons to save on computation time. This means you'll choose a batch of neurons/layers, perform a forward pass on them, calculate the [loss function](../../loss) on that batch, and update gradients within that batch accordingly.
