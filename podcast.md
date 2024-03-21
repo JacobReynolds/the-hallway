@@ -13,10 +13,14 @@ Various snippets, notes from podcasts that I've listened to that I'd like to rem
 
 ### #142: Marlee Joseph - The Secret to Making Better Marketing Decisions
 
-Marlee talks about the ICE framework:
+#### ICE Framework
 
-- I | Impact
-- C | Confidence
-- E | Ease
+This is Marlee's framework for making marketing decisions. The whole team grades on this rubric, I'm unsure on how they create a quantitative score from this though.
 
-She also mentioned the HPPO framework (highest paid persons' opinion).
+| Letter | Description |
+| ------ | ----------- |
+| I      | Impact      |
+| C      | Confidence  |
+| E      | Ease        |
+
+They also discussed the HPPO framework (highest paid persons' opinion), which was a funny acronym I hadn't heard before.
