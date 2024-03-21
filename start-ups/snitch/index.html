@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761937702725">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.764341322618">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.761937702725" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.764341322618" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.761937702725" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.764341322618" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.761937702725" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.764341322618" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -180,6 +180,13 @@
 </doc-anchor-target>
 <p>Luckily it&#x27;s the government, and in <em>some</em>(ish) cases their data is public. You can search all public SEC filings via <a href="https://www.sec.gov/edgar/searchedgar/companysearch">EDGAR</a>, the Electronic Data Gathering, Analysis, and Retrieval system. You can go even deeper by using their <a href="https://www.sec.gov/edgar/search/#">full-text search</a> to dive into all the filings.</p>
 <p>Unfortunately an 8-K is a common form used to notify investors and the SEC about a variety of things, only one of those items being a data breach. Searching EDGAR for <a href="https://www.sec.gov/edgar/search/#/category=custom&amp;forms=8-K">8-K filings</a> returns a ton of documents. Mostly about changes in executive staffing or compensation. But thanks to their, likely <a href="https://lucene.apache.org">lucene</a> backend, we can add a full text match for the words &quot;Item 1.05&quot; and get <a href="https://www.sec.gov/edgar/search/#/q=%2522item%25201.05%2522&amp;category=custom&amp;forms=8-K">more specific results</a>. At the time of writing this, there are 5 results across 3 companies. When I originally performed this research there was only 1 filing. Because of that, I wasn&#x27;t sure how often new filings would come out, and how they would differ in formats so it wasn&#x27;t an appropriate time to start writing automation around it. However as more filings get created and we can start to measure their velocity, this could be a fun data feed or subscription service to provide those that like others&#x27; dirty cyber laundry.</p>
+<doc-anchor-target id="further-thoughts">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#further-thoughts">#</doc-anchor-trigger>
+        <span>Further thoughts</span>
+    </h2>
+</doc-anchor-target>
+<p>Reading the SEC press release more closely, I now realize it also requires annual filings by all publicly traded companies to make a statement about their cybersecurity processes. Although reading some of them, they all seem to be written by a lawyer and lack any substantial information.</p>
 
                                 
                                 <!-- Required only on API pages -->
