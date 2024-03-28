@@ -15,5 +15,5 @@ meta:
 
 integrations:
   plausible:
-    host: metrics.jakereynolds.co
+    host: analytics.mistyresearch.com
     domain: the-hallway.jakereynolds.co
