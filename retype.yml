@@ -12,8 +12,3 @@ footer:
 
 meta:
   title: " | the hallway"
-
-integrations:
-  plausible:
-    host: analytics.mistyresearch.com
-    domain: the-hallway.jakereynolds.co
